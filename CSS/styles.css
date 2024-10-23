@@ -13,3 +13,16 @@ h1 {
     background-color: white;
 }
 
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid;
+    border-bottom-color: rgb(202, 202, 202);
+
+}
+
+.como-jogar:hover, .config:hover{
+    cursor: pointer;
+    font-size: 130%;
+}
