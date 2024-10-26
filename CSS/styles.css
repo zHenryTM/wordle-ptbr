@@ -17,7 +17,7 @@ h1 {
     background-color: #e6d7c7;
     padding: 0px 20px;
     border-radius: 15px;
-    margin: 1.5%;
+    margin: 0.5%;
     box-shadow: 2px 2px 4px;
 }
 
@@ -33,7 +33,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 80px 0px 70px 0px;
+    padding: 80px 0px 65px 0px;
 }
 
 .fa-solid {
@@ -45,7 +45,7 @@ h1 {
     place-items: center;
     grid-template-columns: repeat(5, 50px);
     grid-template-rows: repeat(6, 50px);
-    gap: 24px;
+    gap: 31px;
 }
 
 .grid-item {
