@@ -108,6 +108,16 @@
             </div>
         </div>
 
+        <!-- Som do teclado -->
+        <script>
+            function playKeyboardSound()
+            {
+                var audio = new Audio("./Audio/MarcosVinicius.mp3");
+                audio.play();
+            }
+
+            document.addEventListener("keydown", playKeyboardSound);
+        </script>
     </div>
 </body>
 </html>
