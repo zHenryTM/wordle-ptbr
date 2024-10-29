@@ -4,5 +4,4 @@ function apertarTecla(tecla)
     console.log(tecla.key);
 }
 
-
 document.addEventListener("keydown", apertarTecla);
