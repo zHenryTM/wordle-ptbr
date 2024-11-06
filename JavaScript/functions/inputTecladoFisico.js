@@ -1,11 +1,21 @@
 import { somTecla } from "./somTecla.js";
 import { mostrarNaTela } from "./mostrarNaTela.js";
-
+import { apagarDaTela } from "./apagarDaTela.js";
+ 
 
 function inputTecladoFisico(tecla)
 {
     somTecla();
-    mostrarNaTela(tecla.key);
+
+    if (tecla.key != "Backspace")
+    {
+        mostrarNaTela(tecla.key);
+    }
+    else
+    {
+        apagarDaTela();
+    }
+
 }
 
 
