@@ -6,9 +6,11 @@
     <title>Wordle-PtBR</title>
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Archivo+Black&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="programa-principal">
@@ -37,89 +39,86 @@
                 <div class="grid-item"></div>
                 <div class="grid-item"></div>
                 
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
+                <div class="grid-item disabled"></div>
+                <div class="grid-item disabled"></div>
+                <div class="grid-item disabled"></div>
+                <div class="grid-item disabled"></div>
+                <div class="grid-item disabled"></div>
                 
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
+                <div class="grid-item disabled"></div>
+                <div class="grid-item disabled"></div>
+                <div class="grid-item disabled"></div>
+                <div class="grid-item disabled"></div>
+                <div class="grid-item disabled"></div>
                 
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
+                <div class="grid-item disabled"></div>
+                <div class="grid-item disabled"></div>
+                <div class="grid-item disabled"></div>
+                <div class="grid-item disabled"></div>
+                <div class="grid-item disabled"></div>
                 
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
+                <div class="grid-item disabled"></div>
+                <div class="grid-item disabled"></div>
+                <div class="grid-item disabled"></div>
+                <div class="grid-item disabled"></div>
+                <div class="grid-item disabled"></div>
 
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
+                <div class="grid-item disabled"></div>
+                <div class="grid-item disabled"></div>
+                <div class="grid-item disabled"></div>
+                <div class="grid-item disabled"></div>
+                <div class="grid-item disabled"></div>
             </div>
         </div>
 
         <div id="teclado">
             <!-- Linha 1 -->
             <div class="row">
-                <div class="key" onclick="somTecla()">Q</div>
-                <div class="key" onclick="somTecla()">W</div>
-                <div class="key" onclick="somTecla()">E</div>
-                <div class="key" onclick="somTecla()">R</div>
-                <div class="key" onclick="somTecla()">T</div>
-                <div class="key" onclick="somTecla()">Y</div>
-                <div class="key" onclick="somTecla()">U</div>
-                <div class="key" onclick="somTecla()">I</div>
-                <div class="key" onclick="somTecla()">O</div>
-                <div class="key" onclick="somTecla()">P</div>
+                <div class="key" onclick="inputTecladoVirtual('Q')">Q</div>
+                <div class="key" onclick="inputTecladoVirtual('W')">W</div>
+                <div class="key" onclick="inputTecladoVirtual('E')">E</div>
+                <div class="key" onclick="inputTecladoVirtual('R')">R</div>
+                <div class="key" onclick="inputTecladoVirtual('T')">T</div>
+                <div class="key" onclick="inputTecladoVirtual('Y')">Y</div>
+                <div class="key" onclick="inputTecladoVirtual('U')">U</div>
+                <div class="key" onclick="inputTecladoVirtual('I')">I</div>
+                <div class="key" onclick="inputTecladoVirtual('O')">O</div>
+                <div class="key" onclick="inputTecladoVirtual('P')">P</div>
             </div>
         
             <!-- Linha 2 -->
             <div class="row">
-                <div class="key" onclick="somTecla()">A</div>
-                <div class="key" onclick="somTecla()">S</div>
-                <div class="key" onclick="somTecla()">D</div>
-                <div class="key" onclick="somTecla()">F</div>
-                <div class="key" onclick="somTecla()">G</div>
-                <div class="key" onclick="somTecla()">H</div>
-                <div class="key" onclick="somTecla()">J</div>
-                <div class="key" onclick="somTecla()">K</div>
-                <div class="key" onclick="somTecla()">L</div>
-                <div class="key wide" onclick="somTecla()">⌫</div>
+                <div class="key" onclick="inputTecladoVirtual('A')">A</div>
+                <div class="key" onclick="inputTecladoVirtual('S')">S</div>
+                <div class="key" onclick="inputTecladoVirtual('D')">D</div>
+                <div class="key" onclick="inputTecladoVirtual('F')">F</div>
+                <div class="key" onclick="inputTecladoVirtual('G')">G</div>
+                <div class="key" onclick="inputTecladoVirtual('H')">H</div>
+                <div class="key" onclick="inputTecladoVirtual('J')">J</div>
+                <div class="key" onclick="inputTecladoVirtual('K')">K</div>
+                <div class="key" onclick="inputTecladoVirtual('L')">L</div>
+                <div class="key wide" onclick="inputTecladoVirtual('')">⌫</div>
             </div>
         
             <!-- Linha 3 -->
             <div class="row">
-                <div class="key" onclick="somTecla()">Z</div>
-                <div class="key" onclick="somTecla()">X</div>
-                <div class="key" onclick="somTecla()">C</div>
-                <div class="key" onclick="somTecla()">V</div>
-                <div class="key" onclick="somTecla()">B</div>
-                <div class="key" onclick="somTecla()">N</div>
-                <div class="key" onclick="somTecla()">M</div>
-                <div class="key wide" onclick="somTecla()">ENTER</div>
+                <div class="key" onclick="inputTecladoVirtual('Z')">Z</div>
+                <div class="key" onclick="inputTecladoVirtual('X')">X</div>
+                <div class="key" onclick="inputTecladoVirtual('C')">C</div>
+                <div class="key" onclick="inputTecladoVirtual('V')">V</div>
+                <div class="key" onclick="inputTecladoVirtual('B')">B</div>
+                <div class="key" onclick="inputTecladoVirtual('N')">N</div>
+                <div class="key" onclick="inputTecladoVirtual('M')">M</div>
+                <div class="key wide" onclick="inputTecladoVirtual('')">ENTER</div>
             </div>
         </div>
 
 
-        <!-- Som do teclado -->
-        <script src="./JavaScript/functions/somTecla.js"></script>
+        <!-- Detectar input dos cliques no teclado virtual -->
+        <script type="module" src="./JavaScript/functions/inputTecladoVirtual.js"></script>
 
-        <!-- Detectar input dos cliques -->
-        <script src="./JavaScript/functions/mostrarTeclaNaTela.js"></script>
-
-        <!-- Detectar input do teclado -->
-        <script type="module" src="./JavaScript/functions/apertarTecla.js"></script>
+        <!-- Detectar input do teclado físico -->
+        <script type="module" src="./JavaScript/functions/inputTecladoFisico.js"></script>
 
     </div>
 </body>
