@@ -13,7 +13,7 @@ export function mostrarNaTela(tecla)
             grid = _grid;   
         }
         
-    })
+    });
 
     grid.innerHTML = tecla;
 }
