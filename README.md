@@ -8,4 +8,4 @@ Versão brasileira do jogo Wordle com features novas elaboradas pelos criadores 
 
 ### Explicação do estágio atual
 
-O jogo já coleta uma palavra de uma lista de palavras e a envia para o arquivo responsável pela lógica do jogo e só exibe as letras digitadas em grid habilitados.
+O jogo já coleta uma palavra de uma lista de palavras, eviando-a ao arquivo responsável pela lógica do jogo, e só exibe as letras digitadas em grid habilitados.
