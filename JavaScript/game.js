@@ -1,0 +1,3 @@
+import { obterPalavra } from "./obterPalavra";
+
+// Desenvolver lógica do jogo...
