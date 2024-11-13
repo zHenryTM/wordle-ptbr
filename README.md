@@ -4,6 +4,8 @@ Versão brasileira do jogo Wordle com features novas elaboradas pelos criadores 
 
 ## Estágio atual:
 
-![Captura de tela 2024-11-05 205221](https://github.com/user-attachments/assets/5b931b7b-ba51-4cf4-9894-1d537b68b59d)
+![screenshot atual do jogo](https://github.com/user-attachments/assets/3cc9e1f6-5a44-4a36-8a04-2006afafe92a)
 
-_No momento, estamos trabalhando apenas no HTML e CSS._
+### Explicação do estágio atual
+
+O jogo já coleta uma palavra de uma lista de palavras e a envia para o arquivo responsável pela lógica do jogo e só exibe as letras digitadas em grid habilitados.
