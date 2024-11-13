@@ -23,7 +23,8 @@ function carregarListaDePalavras(gistURL)
 {
     return fetch(gistURL)
         .then(response => response.text())
-        .then(text => text.split('\n').filter(palavra => palavra.trim() !== ''));
+        .then(text => text.split('\n')
+        .filter(palavra => palavra.trim() !== ''));
 }
 
 
