@@ -8,6 +8,6 @@ Versão brasileira do jogo Wordle com features novas elaboradas pelos criadores 
 
 ## Funcionalidades atuais do projeto:
 
-- O jogo já escolhe aleatóriamente uma palavra a partir de uma lista de palavras.
+- O jogo já escolhe aleatoriamente uma palavra a partir de uma lista de palavras.
 - Botões Backspace e Enter funcionais.
 - A Lógica do jogo já está sendo programada e já funciona via console.
