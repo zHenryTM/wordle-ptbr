@@ -4,17 +4,18 @@ import { apagarDaTela } from "./apagarDaTela.js";
 import { logicaDoJogo } from "./logicaDoJogo.js";
 
 
-const inputsPermitidos = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "Enter", "Backspace"];
+const inputsPermitidos = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "enter", "backspace"];
 const tamanhoInputsPermitidos = inputsPermitidos.length;
 
 
 function inputTecladoFisico(tecla)
 {
+    var input = tecla.key.toLowerCase()
     var inputPermitido = false;
 
     for (var i = 0; i < tamanhoInputsPermitidos; i++)
     {
-        if (inputsPermitidos[i] == tecla.key)
+        if (inputsPermitidos[i] == input)
         {
             inputPermitido = true;
         }
@@ -24,17 +25,17 @@ function inputTecladoFisico(tecla)
     {
         somTecla();
 
-        if (tecla.key == "Backspace")
+        if (input == "backspace")
         {
             apagarDaTela();
         }
-        else if (tecla.key == "Enter")
+        else if (input == "enter")
         {
             logicaDoJogo();
         }
         else
         {
-            mostrarNaTela(tecla.key);
+            mostrarNaTela(input);
         }
     }
 }
