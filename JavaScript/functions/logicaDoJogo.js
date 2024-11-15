@@ -1,6 +1,7 @@
 import { obterPalavraAleatoria } from "./obterPalavraAleatoria.js";
 import { pegarPalpite } from "./pegarPalpite.js";
 import { tratarPalpite } from "./tratarPalpite.js"; 
+import { trocarGrids } from "./trocarGrids.js";
 
 // Pegar palpite do usuário (receber quando apertar enter)
 // Tratar palpite do usuário (remover letras duplicadas, pois elas quebram a lógica do jogo)
@@ -22,10 +23,15 @@ export function logicaDoJogo()
 
         console.log("Parabéns, você acertou!");
         fimDeJogo = true;
+
+        // NA VERSÃO FINAL, ENCERRAR O JOGO AQUI, MAS, COMO PRECISO DESABILITAR OS GRIDS HABILITADOS E HABILITAR OS PRÓXIMOS, CHAMAREI O MÉTODO DE DESABILITAR/HABILITAR ABAIXO
+        // ...
     }
     else
     {
         // Jogador erra a palavra
+
+        // Criar loop de acordo com a quantidade de grids disponíveis
 
         for (var letraEmPalpite = 0; letraEmPalpite < palpiteTratadoLen; letraEmPalpite++)
         {
@@ -37,6 +43,9 @@ export function logicaDoJogo()
                 }
             }
         }
+
+        // CHAMAR MÉTODO PARA HABILITAR/DESABILITAR OS GRIDS
+        trocarGrids();
     }
 }
 
