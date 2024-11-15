@@ -1,6 +1,6 @@
 export function apagarDaTela()
 {
-    var grids = document.querySelectorAll(".grid-item");
+    var grids = document.querySelectorAll(".grid-item.enabled");
     var gridsLength = grids.length;
 
     for (var i = 0; i < gridsLength; i++)
