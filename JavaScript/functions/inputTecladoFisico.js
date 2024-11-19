@@ -3,42 +3,30 @@ import { mostrarNaTela } from "./mostrarNaTela.js";
 import { apagarDaTela } from "./apagarDaTela.js";
 import { logicaDoJogo } from "./logicaDoJogo.js";
 
+const regex = /^[a-zA-Z]$/; // Vai funcinar como nosso filtro de letras
+const teclasPermitidas = ['enter', 'backspace']; // Teclas especiais permitidas
 
-const inputsPermitidos = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "enter", "backspace"];
-const tamanhoInputsPermitidos = inputsPermitidos.length;
+// As mudanças aqui foram grandes ;)
+document.addEventListener('keydown', (tecla) => { // Preferi fazer uma Arrow Function porque quero adicionar o Input com Ctrl+V dps...
 
+    let input = tecla.key.toLowerCase();
 
-function inputTecladoFisico(tecla)
-{
-    var input = tecla.key.toLowerCase()
-    var inputPermitido = false;
+    if (!regex.test(input) && !teclasPermitidas.includes(input)) tecla.preventDefault(); // Aqui é onde ocorre o teste do filtro regex, caso o ususario digite algo fora dele ele bloqueia a entrada
+    else{ // Aqui continua bem semelhante ao seu código
 
-    for (var i = 0; i < tamanhoInputsPermitidos; i++)
-    {
-        if (inputsPermitidos[i] == input)
-        {
-            inputPermitido = true;
-        }
-    }
-
-    if (inputPermitido)
-    {
         somTecla();
 
-        if (input == "backspace")
-        {
+        if (input == "backspace") {
             apagarDaTela();
-        }
-        else if (input == "enter")
-        {
+
+        } else if (input == "enter") {
             logicaDoJogo();
-        }
-        else
-        {
+
+        } else {
             mostrarNaTela(input);
+
         }
+        
     }
-}
 
-
-document.addEventListener("keydown", inputTecladoFisico);
+})
