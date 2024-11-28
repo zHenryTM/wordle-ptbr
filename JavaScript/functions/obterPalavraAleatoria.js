@@ -1,7 +1,7 @@
 var listaDePalavras; // Lista de palavras a ser obtida do Gist
 var palavra = ""; // Palavra atual a ser adivinhada
 
-var GIST_URL = 'https://gist.githubusercontent.com/vncsmnl/25e7c165da276405af8ca4e1c8e17806/raw/bd238615c9089721a16418289589961490d0cf65/wordlist';
+var GIST_URL = 'https://gist.githubusercontent.com/un-versed/6373912fbf4649704b6823ea696cfcb1/raw/629137a0d0c7160b94c35013df8d570b31100174/termooo-wordsv2.json';
 
 
 window.onload = function ()
