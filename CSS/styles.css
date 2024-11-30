@@ -114,6 +114,17 @@ h1 {
 }
 
 
+/* ELEMENTOS VISUAIS DO JOGO */
+.right-position {
+    /* Se o jogador acertar a posição da letra */
+    background-color: #3aa394;
+}
+
+.wrong-position {
+    /* Se o jogador errar a posição da letra */
+    background-color: #d3ad69;
+}
+
 
 /* RESPONSIVIDADE */
 
