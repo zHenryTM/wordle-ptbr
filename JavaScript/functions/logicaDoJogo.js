@@ -2,6 +2,7 @@ import { obterPalavraAleatoria } from "./obterPalavraAleatoria.js";
 import { pegarPalpite } from "./pegarPalpite.js";
 import { tratarPalpite } from "./tratarPalpite.js"; 
 import { trocarGrids } from "./trocarGrids.js";
+import { trocarCorDoGrid } from "./trocarCorDoGrid.js";
 
 // Pegar palpite do usuário (receber quando apertar enter)
 // Tratar palpite do usuário (remover letras duplicadas, pois elas quebram a lógica do jogo)
@@ -37,9 +38,22 @@ export function logicaDoJogo()
         {
             for (var letraEmPalavra = 0; letraEmPalavra < 5; letraEmPalavra++)
             {
+                // Esse If verifica se há letras em comum entre as duas palavras, apenas.
                 if (palpiteTratado[letraEmPalpite] == palavra[letraEmPalavra])
                 {
+                    // Se o palpite tiver a letra que está em palavra, diz a posição correta dessa letra
                     console.log("Letra " + palpiteTratado[letraEmPalpite] + " na posição " + (letraEmPalavra + 1));
+
+                    if (letraEmPalpite == letraEmPalavra)
+                    {
+                        // Jogador acertou a posição da letra
+                        trocarCorDoGrid(letraEmPalavra, "verde");
+                    }
+                    else
+                    {
+                        // Jogador errou a posição da letra
+                        trocarCorDoGrid(letraEmPalavra, "amarelo");
+                    }
                 }
             }
         }
