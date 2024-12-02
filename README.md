@@ -37,4 +37,4 @@ O terceiro, e maior desafio até então, foi a respeito da lógica do jogo, que 
 
 A ideia escolhida para superar esse problema foi a seguinte:
 
-converter a palavra sorteada e o input do jogador em objetos JavaScript (semelhantes ao dicionários em Python), em que cada letra das palavras se torna a chave e seus respectivos indíces dentro da string se tornam os valores; em seguida, verifica-se quais chaves estão presentes em ambos os objetos e analisa-se os seus valores; se houverem valores iguais, significa que as letras estão na posição correta, caso contrário, signjifica que estão na posição errada. 
+converter a palavra sorteada e o input do jogador em objetos JavaScript (semelhantes ao dicionários em Python), em que cada letra das palavras se torna a chave e seus respectivos indíces dentro da string se tornam os valores; em seguida, verifica-se quais chaves estão presentes em ambos os objetos e analisa-se os seus valores; se houverem valores iguais, significa que as letras estão na posição correta, caso contrário, significa que estão na posição errada. 
