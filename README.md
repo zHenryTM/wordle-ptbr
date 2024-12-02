@@ -25,7 +25,7 @@ Embora o jogo já possua lógica, diversas funcionalidades precisam ser implemen
 - Resolver pequenos bugs visuais
 - Melhorar responsividade para dispositiveis móveis
 
-### Sobre os desafios enfrentados durante o desenvolvimento
+## Sobre os desafios enfrentados durante o desenvolvimento
 
 Diversos desafios foram, e continuam sendo, superados durante o desenvolvimento do Wordle-PtBR, o que proporcionou, e continua proporcionando, diversos momentos de descoberta e aprendizado. Esse processo é fundamental para a melhora de nossas habilidades de programação e, por isso, é visto com muito orgulho.
 
