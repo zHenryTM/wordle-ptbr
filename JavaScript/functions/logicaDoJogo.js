@@ -63,14 +63,23 @@ function compararLetras(objeto_palavra, objeto_palpite, chavesIguais)
     chavesIguais.forEach(chave => {
         var letraPalavra = objeto_palavra[chave];
         var letraPalpite = objeto_palpite[chave];
-        var lugarCerto = letraPalpite.filter(letra => {
-            if (letraPalavra.includes(letra))
+        var contador = 0;  // Esse contador impede que uma letra seja indicada visualmente na tela mais vezes do que ela aparece na palavra
+                           // Exemplo: "prata". A letra "a" aparece duas vezes, logo, se o jogador chutar "apara", o atributo contador impedirá
+                           // que o "a" seja indicado na tela mais que duas vezes
+
+        letraPalpite.filter(letra => {
+            if (contador < letraPalavra.length)
             {
-                trocarCorDoGrid(letra, "verde");
-            }
-            else
-            {
-                trocarCorDoGrid(letra, "amarelo");
+                if (letraPalavra.includes(letra))
+                {
+                    trocarCorDoGrid(letra, "verde");
+                }
+                else
+                {
+                    trocarCorDoGrid(letra, "amarelo");
+                }
+                
+                contador++;
             }
         });
     });
