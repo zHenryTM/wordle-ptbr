@@ -1,40 +1,41 @@
-var listaDePalavras; // Lista de palavras a ser obtida do Gist
-var palavra = ""; // Palavra atual a ser adivinhada
+var listaDePalavras;
+var palavraAleatoria;
+var gist_url = "https://gist.githubusercontent.com/un-versed/6373912fbf4649704b6823ea696cfcb1/raw/629137a0d0c7160b94c35013df8d570b31100174/termooo-wordsv2.json";
 
-var GIST_URL = 'https://gist.githubusercontent.com/vncsmnl/25e7c165da276405af8ca4e1c8e17806/raw/bd238615c9089721a16418289589961490d0cf65/wordlist';
 
-
-window.onload = function ()
+window.onload = async function()
 {
-    carregarListaDePalavras(GIST_URL)
-        .then(lista =>
-        {
-            listaDePalavras = lista;
-            gerarPalavraAleatoria();
-        })
-        .catch(erro =>
-        {
-            console.error('Erro ao carregar a lista de palavras:', erro);
-        });
+    // Importa lista de palavras e escolhe aleatoriamente uma palavra
+
+    listaDePalavras = await fetch(gist_url)
+        .then(listaDePalavras => listaDePalavras.text())
+        .then(listaDePalavras => listaDePalavras.split(","));
+
+    palavraAleatoria = tratarPalavraAleatoria(listaDePalavras[Math.floor(Math.random() * listaDePalavras.length)]);
+
+    console.log(palavraAleatoria);
+    console.log(palavraAleatoria.length);
 }
 
 
-function carregarListaDePalavras(gistURL)
+function tratarPalavraAleatoria(palavraAleatoria)
 {
-    return fetch(gistURL)
-        .then(response => response.text())
-        .then(text => text.split('\n').filter(palavra => palavra.trim() !== ''));
-}
+    // Remove aspas, colchetes, espaços vazios e \n da palavra sorteda
 
+    palavraAleatoria = palavraAleatoria.replaceAll('"', '')
+        .replaceAll("\n", "")
+        .replaceAll("[", "")
+        .replaceAll("]", "")
+        .trim()
+        .toUpperCase();
 
-function gerarPalavraAleatoria()
-{
-    palavra = listaDePalavras[Math.floor(Math.random() * listaDePalavras.length)].toUpperCase();
-    console.log(palavra);  // TEST STUFF
+    return palavraAleatoria;
 }
 
 
 export function obterPalavraAleatoria()
 {
-    return palavra;
+    // Retorna uma palavra de 5 caracteres
+
+    return palavraAleatoria;
 }
