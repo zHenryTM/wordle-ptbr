@@ -2,7 +2,8 @@ import { obterPalavraAleatoria } from "./obterPalavraAleatoria.js";
 import { pegarPalpite } from "./pegarPalpite.js";
 import { trocarCorDoGrid } from "./trocarCorDoGrid.js";
 import { trocarGrids } from "./trocarGrids.js";
-
+import { trocarCorDaTeclaVirtual } from "./trocarCorDaTeclaVirtual.js";
+ 
 
 function indexOfLetter(palavra, letra)
 {
@@ -60,6 +61,9 @@ function compararLetras(objeto_palavra, objeto_palpite, chavesIguais)
      * Verifica e expoe na tela quais letras estão na posição certa, quais letras estão na posição errada e quais letras não estão presentes na palavra a ser adivinhada.
      */
 
+    var chavesDiferentes = Object.keys(objeto_palpite).filter(letra => !Object.keys(objeto_palavra).includes(letra))
+    chavesDiferentes.forEach(chave => trocarCorDaTeclaVirtual(chave, "opacity50"));
+
     chavesIguais.forEach(chave => {
         var letraPalavra = objeto_palavra[chave];
         var letraPalpite = objeto_palpite[chave];
@@ -73,10 +77,12 @@ function compararLetras(objeto_palavra, objeto_palpite, chavesIguais)
                 if (letraPalavra.includes(letra))
                 {
                     trocarCorDoGrid(letra, "verde");
+                    trocarCorDaTeclaVirtual(chave, "verde")
                 }
                 else
                 {
                     trocarCorDoGrid(letra, "amarelo");
+                    trocarCorDaTeclaVirtual(chave, "amarelo")
                 }
                 
                 contador++;
