@@ -3,6 +3,7 @@ import { pegarPalpite } from "./pegarPalpite.js";
 import { trocarCorDoGrid } from "./trocarCorDoGrid.js";
 import { trocarGrids } from "./trocarGrids.js";
 import { trocarCorDaTeclaVirtual } from "./trocarCorDaTeclaVirtual.js";
+import { desabilitarGridsHabilitados } from "./desabilitarGridsHabilitados.js";
  
 
 function indexOfLetter(palavra, letra)
@@ -112,5 +113,5 @@ export function logicaDoJogo()
 
     compararLetras(objeto_palavra, objeto_palpite, chavesIguais);
 
-    if (!venceu()) trocarGrids();
+    if (!venceu()) trocarGrids(); else desabilitarGridsHabilitados();
 }
