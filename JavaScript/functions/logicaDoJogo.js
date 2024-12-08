@@ -86,6 +86,16 @@ function compararLetras(objeto_palavra, objeto_palpite, chavesIguais)
 }
 
 
+function venceu()
+{
+    /**
+     * Verifica se o jogador acertou as 5 letras e retorna true ou false.
+    */
+
+    return (document.querySelectorAll(".grid-item.right-position.enabled").length == 5) ? true : false; 
+}
+
+
 export function logicaDoJogo()
 {
     var palavra = obterPalavraAleatoria();
@@ -96,5 +106,5 @@ export function logicaDoJogo()
 
     compararLetras(objeto_palavra, objeto_palpite, chavesIguais);
 
-    trocarGrids();
+    if (!venceu()) trocarGrids();
 }
