@@ -1,3 +1,7 @@
+import { tratarPalavraAleatoria } from "./tratarPalavraAleatoria.js";
+import { removerAcentosGraficos } from "./removerAcentosGraficos.js";
+
+
 var listaDePalavras;
 var palavraAleatoria;
 var palavraAleatoriaSemAcento;
@@ -20,60 +24,17 @@ window.onload = async function()
 }
 
 
-function tratarPalavraAleatoria(palavraAleatoria)
+export function obterListaDePalavras()
 {
-    // Remove aspas, colchetes, espaços vazios e \n da palavra sorteda
+    // O arquivo que pega o palpite digitado pelo jogador precisa verificar se a palavra chutada está dentro dessa lista.
 
-    palavraAleatoria = palavraAleatoria.replaceAll('"', '')
-        .replaceAll("\n", "")
-        .replaceAll("[", "")
-        .replaceAll("]", "")
-        .trim()
-        .toUpperCase();
-
-    return palavraAleatoria;
-}
-
-
-function removerAcentosGraficos(palavra)
-{
-    var palavraSemAcento = "";
-    var acentosGraficos =
-    {
-        "Á": "A",
-        "Â": "A",
-        "Ã": "A",
-        "É": "E",
-        "Ê": "E",
-        "Í": "I",
-        "Ó": "O",
-        "Ô": "O",
-        "Õ": "O",
-        "Ú": "U",
-        "Ç": "C"
-    };
-
-    for (var i = 0; i < palavra.length; i++)
-    {
-        var letra = palavra[i];
-
-        if (Object.keys(acentosGraficos).includes(letra))
-        {
-            palavraSemAcento += acentosGraficos[letra];
-        }
-        else
-        {
-            palavraSemAcento += letra;
-        }
-    }
-
-    return palavraSemAcento;
+    return listaDePalavras;
 }
 
 
 export function obterPalavraAleatoria()
 {
-    // Retorna uma palavra de 5 caracteres
+    // Retorna a palavra de 5 caracteres gerada aleatoriamente com acentos gráficos.
 
     return palavraAleatoriaSemAcento;
 }
