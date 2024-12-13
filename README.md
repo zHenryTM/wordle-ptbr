@@ -21,8 +21,6 @@ Embora o jogo já possua lógica, diversas funcionalidades precisam ser implemen
 - Animações para tornar o jogo mais agradável
 - Menu de configurações
 - Instruções de como jogar o jogo
-- Selecionar palavras de uma lista melhor que a atual
-- Resolver bugs referente a letras com acentos gráficos
 - Melhorar responsividade para dispositiveis móveis
 
 ## Sobre os desafios enfrentados durante o desenvolvimento
