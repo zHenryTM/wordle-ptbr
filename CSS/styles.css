@@ -61,6 +61,14 @@ h1 {
     font-family: "Anton SC", sans-serif;
     font-weight: 400;
     font-style: normal;
+
+    animation: 1s flipAnimation ease;
+    animation-play-state: paused;
+    animation-direction: normal;
+}
+
+@keyframes flipAnimation {
+    0% {rotate: y 180deg;}
 }
 
 .disabled {
@@ -127,6 +135,13 @@ h1 {
 
 .opacity50 {
     opacity: 50%;
+}
+
+
+/* ANIMAÇÕES */
+.grid-item.enabled {
+    rotate: y 360deg;
+    transition: all 1s ease;
 }
 
 
