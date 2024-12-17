@@ -4,7 +4,6 @@ import { trocarCorDoGrid } from "./trocarCorDoGrid.js";
 import { trocarGrids } from "./trocarGrids.js";
 import { trocarCorDaTeclaVirtual } from "./trocarCorDaTeclaVirtual.js";
 import { desabilitarGridsHabilitados } from "./desabilitarGridsHabilitados.js";
-import { flipAnimation } from "./flipAnimation.js";
  
 
 function indexOfLetter(palavra, letra)
@@ -78,13 +77,11 @@ function compararLetras(objeto_palavra, objeto_palpite, chavesIguais)
             {
                 if (letraPalavra.includes(letra))
                 {
-                    flipAnimation();
                     trocarCorDoGrid(letra, "verde");
                     trocarCorDaTeclaVirtual(chave, "verde")
                 }
                 else
                 {
-                    flipAnimation();
                     trocarCorDoGrid(letra, "amarelo");
                     trocarCorDaTeclaVirtual(chave, "amarelo")
                 }
