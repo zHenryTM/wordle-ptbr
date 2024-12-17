@@ -1,17 +1,8 @@
-function sleep(ms)
+export function flipAnimation(indiceGrid)
 {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
+    /**
+     * Altera o valor de animation-play-state, do arquivo CSS, de "paused" para "running", ativando o gatilho para iniciar animação.
+    */
 
-
-export async function flipAnimation()
-{
-    var grids = document.querySelectorAll(".grid-item.enabled");
-
-    for (var grid of grids)
-    {
-        grid.style.animationPlayState = "running";
-
-        await sleep(500);
-    }
+    document.querySelectorAll(".grid-item.enabled")[indiceGrid].style.animationPlayState = "running";
 }
