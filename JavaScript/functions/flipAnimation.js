@@ -1,13 +1,17 @@
-function sleep(ms) {
+function sleep(ms)
+{
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-export async function flipAnimation() {
-    const grids = document.querySelectorAll(".grid-item.enabled");
 
-    for (const grid of grids)
+export async function flipAnimation()
+{
+    var grids = document.querySelectorAll(".grid-item.enabled");
+
+    for (var grid of grids)
     {
         grid.style.animationPlayState = "running";
-        await sleep(1000);
+
+        await sleep(500);
     }
 }
