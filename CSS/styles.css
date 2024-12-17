@@ -64,7 +64,6 @@ h1 {
 
     animation: 1.5s flipAnimation ease;
     animation-play-state: paused;
-    animation-direction: normal;
 }
 
 @keyframes flipAnimation {
