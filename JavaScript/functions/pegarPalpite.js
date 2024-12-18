@@ -1,6 +1,7 @@
 import { obterListaDePalavras } from "./obterPalavraAleatoria.js";
 import { tratarPalavraAleatoria } from "./tratarPalavraAleatoria.js";
 import { removerAcentosGraficos } from "./removerAcentosGraficos.js";
+import { feedback } from "./feedback.js";
 
 
 export function pegarPalpite()
@@ -26,5 +27,5 @@ export function pegarPalpite()
         if (palpite == palavra) palpiteEmListaDePalavras = true;
     });
 
-    if (palpiteEmListaDePalavras) return palpite;
+    if (palpiteEmListaDePalavras) return palpite; else feedback("Palavra inválida", "verde", true);
 }
