@@ -27,5 +27,5 @@ export function pegarPalpite()
         if (palpite == palavra) palpiteEmListaDePalavras = true;
     });
 
-    if (palpiteEmListaDePalavras) return palpite; else feedback("Palavra inválida", "verde", true);
+    if (palpiteEmListaDePalavras) return palpite; else feedback("Palavra inválida", "vermelho", true);
 }
