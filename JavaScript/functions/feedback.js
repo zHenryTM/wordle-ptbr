@@ -18,4 +18,7 @@ export function feedback(mensagem="Escreva uma mensagem...", cor="vermelho", est
     feedbackDiv.getElementsByTagName("p")[0].innerHTML = mensagem;
     feedbackDiv.style.backgroundColor = corDiv;
     feedbackDiv.style.visibility = estaVisivelDiv;
+    feedbackDiv.style.animation = "0.5s shake linear";
+
+    setTimeout(() => {feedbackDiv.style.visibility = "hidden"; feedbackDiv.style.animation = "none"}, 4000);
 }
