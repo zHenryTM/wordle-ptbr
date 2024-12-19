@@ -3,7 +3,7 @@ export function feedback(mensagem="Escreva uma mensagem...", cor="vermelho", est
     /**
      * Exibe na tela mensagens quando:
      *      - O jogador digita uma palavra inválida (que não está presente na lista de palavras).
-     *      - O jogador acerta a palavra.
+     *      - O jogador acerta a palavra e vence o jogo.
      * 
      * Parâmetros:
      *      - mensagem : string     -> mensagem a ser exibida na tela. Pode ser qualquer string.
@@ -14,11 +14,16 @@ export function feedback(mensagem="Escreva uma mensagem...", cor="vermelho", est
     var feedbackDiv = document.getElementsByClassName("feedback")[0];
     var corDiv = (cor.toLowerCase() == "verde") ? "#3aa394" : "#F72C5B";
     var estaVisivelDiv = (estaVisivel == true) ? "visible" : "hidden";
+    var audio = new Audio("./../../Assets/Audio/SomPalavraInvalida.mp3");  // Será definido a partir de um parâmetro posteriormente
 
     feedbackDiv.getElementsByTagName("p")[0].innerHTML = mensagem;
     feedbackDiv.style.backgroundColor = corDiv;
     feedbackDiv.style.visibility = estaVisivelDiv;
     feedbackDiv.style.animation = "0.5s shake linear";
 
+    audio.volume = 0.3;
+    audio.play();
+
+    setTimeout(() => {feedbackDiv.style.animation = "0.25s zoomOut linear"}, 3750);
     setTimeout(() => {feedbackDiv.style.visibility = "hidden"; feedbackDiv.style.animation = "none"}, 4000);
 }
