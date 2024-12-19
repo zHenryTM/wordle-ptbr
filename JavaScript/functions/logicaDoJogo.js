@@ -5,6 +5,7 @@ import { trocarGrids } from "./trocarGrids.js";
 import { trocarCorDaTeclaVirtual } from "./trocarCorDaTeclaVirtual.js";
 import { desabilitarGridsHabilitados } from "./desabilitarGridsHabilitados.js";
 import { flipAnimation } from "./flipAnimation.js";
+import { feedback } from "./feedback.js";
  
 
 function indexOfLetter(palavra, letra)
@@ -106,6 +107,17 @@ function venceu()
 }
 
 
+function rotinaDeVitoria()
+{
+    /**
+     * Este método é responsável pelos efeitos audiovisuais e pelo comportamento do jogo.
+    */
+
+    feedback("Você venceu!", "verde", true);
+    desabilitarGridsHabilitados()
+}
+
+
 export function logicaDoJogo()
 {
     var palavra = obterPalavraAleatoria();
@@ -116,5 +128,5 @@ export function logicaDoJogo()
 
     compararLetras(objeto_palavra, objeto_palpite, chavesIguais);
 
-    if (!venceu()) trocarGrids(); else desabilitarGridsHabilitados();
+    if (!venceu()) trocarGrids(); else rotinaDeVitoria();
 }
