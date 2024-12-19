@@ -14,14 +14,15 @@ export function feedback(mensagem="Escreva uma mensagem...", cor="vermelho", est
     var feedbackDiv = document.getElementsByClassName("feedback")[0];
     var corDiv = (cor.toLowerCase() == "verde") ? "#3aa394" : "#F72C5B";
     var estaVisivelDiv = (estaVisivel == true) ? "visible" : "hidden";
-    var audio = new Audio("./../../Assets/Audio/SomPalavraInvalida.mp3");  // Será definido a partir de um parâmetro posteriormente
+    var audioPath = (cor.toLowerCase() == "vermelho") ? "./../../Assets/Audio/SomPalavraInvalida.mp3" : "./../../Assets/Audio/SomVitoria.mp3";
+    var audio = new Audio(audioPath);
 
     feedbackDiv.getElementsByTagName("p")[0].innerHTML = mensagem;
     feedbackDiv.style.backgroundColor = corDiv;
     feedbackDiv.style.visibility = estaVisivelDiv;
     feedbackDiv.style.animation = "0.5s shake linear";
 
-    audio.volume = 0.3;
+    audio.volume = (cor.toLowerCase() == "vermelho") ? 0.3 : 0.15;
     audio.play();
 
     setTimeout(() => {feedbackDiv.style.animation = "0.25s zoomOut linear"}, 3750);
