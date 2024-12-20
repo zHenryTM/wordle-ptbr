@@ -1,5 +1,9 @@
 export function mostrarNaTela(tecla)
 {
+    /**
+     * Exibe na tela as letras digitadas pelo jogador, tanto pelo teclado físico quanto pelo teclado virtual.
+    */
+
     tecla = tecla.toUpperCase();
 
     var grids = document.querySelectorAll(".grid-item.enabled");
@@ -13,7 +17,8 @@ export function mostrarNaTela(tecla)
             grid = _grid;   
         }
         
-    })
+    });
 
+    grid.style.animation = "0.25s zoomGrid ease";
     grid.innerHTML = tecla;
 }
