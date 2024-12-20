@@ -14,7 +14,7 @@ export function feedback(mensagem="Escreva uma mensagem...", cor="vermelho", est
     var feedbackDiv = document.getElementsByClassName("feedback")[0];
     var corDiv = (cor.toLowerCase() == "verde") ? "#3aa394" : "#F72C5B";
     var estaVisivelDiv = (estaVisivel == true) ? "visible" : "hidden";
-    var audioPath = (cor.toLowerCase() == "vermelho") ? "./../../Assets/Audio/SomPalavraInvalida.mp3" : "./../../Assets/Audio/SomVitoria.mp3";
+    var audioPath = (cor.toLowerCase() == "vermelho") ? "./Assets/Audio/SomPalavraInvalida.mp3" : "./Assets/Audio/SomVitoria.mp3";
     var audio = new Audio(audioPath);
 
     feedbackDiv.getElementsByTagName("p")[0].innerHTML = mensagem;
