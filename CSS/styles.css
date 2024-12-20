@@ -107,8 +107,13 @@ h1 {
     font-weight: 400;
     font-style: normal;
 
-    animation: 1.5s flipAnimation ease;
-    animation-play-state: paused;
+    animation: none;
+}
+
+@keyframes zoomGrid {
+    0% {scale: 0%}
+    50% {scale: 110%}
+    100% {scale: 100%}
 }
 
 @keyframes flipAnimation {
