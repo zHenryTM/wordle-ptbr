@@ -79,6 +79,12 @@ h1 {
     100% {scale: 0%}
 }
 
+@keyframes zoomIn {
+    0% {scale: 0%}
+    50% {scale: 150%}
+    100% {scale: 100%}
+}
+
 .grid {
     display: grid;
     place-items: center;
