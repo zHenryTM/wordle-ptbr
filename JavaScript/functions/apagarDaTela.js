@@ -15,6 +15,7 @@ export function apagarDaTela()
             // Se o grid atual (i) não tiver nenhum valor, isso significa que o anterior (i - 1) tem, logo, ele terá seu valor deletado
             var grid = grids[indiceGrids];
             grid.innerHTML = "";
+            grid.style.animation = "none"; 
         }
     }
 }
