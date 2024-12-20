@@ -19,7 +19,7 @@ O programa já é capaz de:
 Embora o jogo já possua lógica, diversas funcionalidades precisam ser implementadas, como:
 
 - Animações para tornar o jogo mais agradável
-- Menu de configurações
+- Menu de configurações 
 - Instruções de como jogar o jogo
 - Melhorar responsividade para dispositiveis móveis
 
