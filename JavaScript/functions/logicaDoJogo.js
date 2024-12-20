@@ -6,6 +6,7 @@ import { trocarCorDaTeclaVirtual } from "./trocarCorDaTeclaVirtual.js";
 import { desabilitarGridsHabilitados } from "./desabilitarGridsHabilitados.js";
 import { flipAnimation } from "./flipAnimation.js";
 import { feedback } from "./feedback.js";
+import { lancarConfetes } from "./confetti.js";
  
 
 function indexOfLetter(palavra, letra)
@@ -114,6 +115,7 @@ function rotinaDeVitoria()
     */
 
     feedback("Você venceu!", "verde", true);
+    lancarConfetes();
     desabilitarGridsHabilitados()
 }
 
