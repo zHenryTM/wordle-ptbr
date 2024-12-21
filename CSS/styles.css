@@ -110,7 +110,13 @@ h1 {
     animation: none;
 }
 
-@keyframes zoomGrid {
+@keyframes zoomGridEnter {
+    0% {scale: 0%}
+    50% {scale: 110%}
+    100% {scale: 100%}
+}
+
+@keyframes zoomGridDelete {
     0% {scale: 0%}
     50% {scale: 110%}
     100% {scale: 100%}
