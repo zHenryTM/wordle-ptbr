@@ -27,5 +27,17 @@ export function pegarPalpite()
         if (palpite == palavra) palpiteEmListaDePalavras = true;
     });
 
-    if (palpiteEmListaDePalavras) return palpite; else feedback("Palavra inválida", "vermelho", true);
+    if (palpiteEmListaDePalavras)
+    {
+        return palpite;
+    }
+    else
+    {
+        var audio = new Audio("./Assets/Audio/SomPalavraInvalida.mp3")
+        
+        audio.volume = 0.3;
+        audio.play();
+
+        feedback("Palavra inválida", "vermelho");
+    }
 }
