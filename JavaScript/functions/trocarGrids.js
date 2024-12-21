@@ -1,4 +1,5 @@
 import { desabilitarGridsHabilitados } from "./desabilitarGridsHabilitados.js";
+import { obterIndexUltimoGridHabilitado } from "./obterIndexUltimoGridHabilitado.js";
 
 
 function habilitarGridsDesabilitados(indexUltimoGridHabilitado)
@@ -15,24 +16,6 @@ function habilitarGridsDesabilitados(indexUltimoGridHabilitado)
         grid.classList.remove("disabled");
         grid.classList.add("enabled");
     }
-}
-
-
-function obterIndexUltimoGridHabilitado()
-{
-    var grids = document.querySelectorAll(".grid-item");
-    var gridsLen = grids.length;
-    var indexUltimoGridHabilitado;
-
-    for (var index = 0; index < gridsLen; index++)
-    {
-        if (grids[index].className != "grid-item disabled")
-        {
-            indexUltimoGridHabilitado = index;
-        }
-    }
-
-    return indexUltimoGridHabilitado;
 }
 
 
