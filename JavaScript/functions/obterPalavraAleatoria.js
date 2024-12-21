@@ -38,3 +38,9 @@ export function obterPalavraAleatoria()
 
     return palavraAleatoriaSemAcento;
 }
+
+
+export function obterPalavraAleatoriaComAcento()
+{
+    return palavraAleatoria;
+}
