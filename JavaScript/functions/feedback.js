@@ -1,4 +1,4 @@
-export function feedback(mensagem="Escreva uma mensagem...", cor="vermelho", estaVisivel=true)
+export function feedback(mensagem="Escreva uma mensagem...", cor="vermelho", visibilityTimeInMs=4000)
 {
     /**
      * Exibe na tela mensagens quando:
@@ -13,18 +13,12 @@ export function feedback(mensagem="Escreva uma mensagem...", cor="vermelho", est
 
     var feedbackDiv = document.getElementsByClassName("feedback")[0];
     var corDiv = (cor.toLowerCase() == "verde") ? "#3aa394" : "#F72C5B";
-    var estaVisivelDiv = (estaVisivel == true) ? "visible" : "hidden";
-    var audioPath = (cor.toLowerCase() == "vermelho") ? "./Assets/Audio/SomPalavraInvalida.mp3" : "./Assets/Audio/SomVitoria.mp3";
-    var audio = new Audio(audioPath);
 
     feedbackDiv.getElementsByTagName("p")[0].innerHTML = mensagem;
     feedbackDiv.style.backgroundColor = corDiv;
-    feedbackDiv.style.visibility = estaVisivelDiv;
+    feedbackDiv.style.visibility = "visible";
     feedbackDiv.style.animation = (cor.toLowerCase() == "vermelho") ? "0.5s shake linear" : "0.25s zoomIn ease";
-
-    audio.volume = (cor.toLowerCase() == "vermelho") ? 0.3 : 0.15;
-    audio.play();
  
-    setTimeout(() => {feedbackDiv.style.animation = "0.25s zoomOut linear"}, 3750);
-    setTimeout(() => {feedbackDiv.style.visibility = "hidden"; feedbackDiv.style.animation = "none"}, 4000);
+    setTimeout(() => {feedbackDiv.style.animation = "0.25s zoomOut linear"}, visibilityTimeInMs - 250);
+    setTimeout(() => {feedbackDiv.style.visibility = "hidden"; feedbackDiv.style.animation = "none"}, visibilityTimeInMs);
 }
