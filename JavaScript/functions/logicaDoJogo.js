@@ -115,7 +115,7 @@ function rotinaDeVitoria()
      * Este método é responsável pelos efeitos audiovisuais e pelo comportamento do jogo.
     */
 
-    var audio = new Audio("./../../Assets/Audio/SomVitoria.mp3");
+    var audio = new Audio("./Assets/Audio/SomVitoria.mp3");
     audio.volume = 0.12;
     audio.play();
 
@@ -127,7 +127,7 @@ function rotinaDeVitoria()
 
 function gameOver() 
 {
-    var audio = new Audio("./../../Assets/Audio/SomDerrota.mp3");
+    var audio = new Audio("./Assets/Audio/SomDerrota.mp3");
     audio.volume = 0.5;
     audio.play();
 
