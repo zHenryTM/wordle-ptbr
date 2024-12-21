@@ -19,6 +19,6 @@ export function mostrarNaTela(tecla)
         
     });
 
-    grid.style.animation = "0.25s zoomGrid ease";
+    grid.style.animation = "0.25s zoomGridEnter ease";
     grid.innerHTML = tecla;
 }
