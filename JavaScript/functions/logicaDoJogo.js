@@ -1,4 +1,4 @@
-import { obterPalavraAleatoria } from "./obterPalavraAleatoria.js";
+import { obterPalavraAleatoria, obterPalavraAleatoriaComAcento } from "./obterPalavraAleatoria.js";
 import { pegarPalpite } from "./pegarPalpite.js";
 import { trocarCorDoGrid } from "./trocarCorDoGrid.js";
 import { trocarGrids } from "./trocarGrids.js";
@@ -7,6 +7,7 @@ import { desabilitarGridsHabilitados } from "./desabilitarGridsHabilitados.js";
 import { flipAnimation } from "./flipAnimation.js";
 import { feedback } from "./feedback.js";
 import { lancarConfetes } from "./confetti.js";
+import { obterIndexUltimoGridHabilitado } from "./obterIndexUltimoGridHabilitado.js";
  
 
 function indexOfLetter(palavra, letra)
@@ -114,9 +115,23 @@ function rotinaDeVitoria()
      * Este método é responsável pelos efeitos audiovisuais e pelo comportamento do jogo.
     */
 
-    feedback("Você venceu!", "verde", true);
+    var audio = new Audio("./../../Assets/Audio/SomVitoria.mp3");
+    audio.volume = 0.12;
+    audio.play();
+
+    feedback("Você venceu!", "verde");
     lancarConfetes();
     desabilitarGridsHabilitados()
+}
+
+
+function gameOver() 
+{
+    var audio = new Audio("./../../Assets/Audio/SomDerrota.mp3");
+    audio.volume = 0.5;
+    audio.play();
+
+    feedback("Palavra correta: " + obterPalavraAleatoriaComAcento(), "vermelho", 60000);
 }
 
 
@@ -130,5 +145,17 @@ export function logicaDoJogo()
 
     compararLetras(objeto_palavra, objeto_palpite, chavesIguais);
 
-    if (!venceu()) trocarGrids(); else rotinaDeVitoria();
+    if (venceu())
+    {
+        rotinaDeVitoria();
+        return;
+    }
+
+    if (obterIndexUltimoGridHabilitado() == 29)
+    {
+        // Entrará aqui caso acabe todas as chances de se acertar a palavra
+        gameOver();
+    }
+    
+    trocarGrids();
 }
