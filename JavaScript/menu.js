@@ -18,7 +18,7 @@ export class Menu
     static configuracoes = document.getElementsByClassName("configuracoes")[0];
     static instrucoesEstaVisivel = false;
     static configuracoesEstaVisivel = false;
-    static audio = new Audio("./../Assets/Audio/SomButtonHover.mp3");
+    static audio = new Audio("./Assets/Audio/SomButtonHover.mp3");
 
 
     static switchJanelaInstrucoes()
