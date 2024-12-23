@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wordle-PtBR</title>
     <link rel="stylesheet" href="CSS/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,12 +17,18 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Archivo+Black&family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Archivo+Black&family=Maven+Pro:wght@400..900&display=swap"
+        rel="stylesheet">
 </head>
+
+<body>
+    <div class="menu-pelicula" onclick="fecharJanela()"></div>
+
     <div id="programa-principal">
 
         <div id="header">
-            <div class="como-jogar">
+            <div class="como-jogar" onclick="switchJanelaInstrucoes()" onmouseover="playButtonHoverAudio()">
                 <i class="fa-solid fa-lg fa-question"></i>
             </div>
 
@@ -29,43 +38,101 @@
             </div>
 
 
-            <div class="config">
+            <div class="config" onclick="switchJanelaConfiguracoes()" onmouseover="playButtonHoverAudio()">
                 <i class="fa-solid fa-lg fa-gear"></i>
             </div>
         </div>
 
-        
+
 
         <div id="jogo">
+
             <div class="feedback">
                 <p>Palavra inválida</p>
             </div>
-            
+
+            <div class="instrucoes">
+                <div class="instrucoes-header">
+                    <h2>COMO JOGAR</h2>
+                    <p onclick="switchJanelaInstrucoes()" onmouseover="playButtonHoverAudio()">✖</p>
+                </div>
+
+                <div class="instrucoes-body">
+                    <div class="texto-pre-exemplos">
+                        <p>Descubra as palavras do dia. Use o botão Enter para enviar sua tentativa.<br><br>
+                            Depois de cada tentativa, a cor dos quadrados irá mudar de acordo com os seguintes exemplos:
+                        </p>
+                        <br>
+                    </div>
+                    <div class="exemplos">
+                        <ul>
+                            <li>H</li>
+                            <li>E</li>
+                            <li class="exemplo-letra-verde">N</li>
+                            <li>R</li>
+                            <li>Y</li>
+                        </ul>
+
+                        <p>A letra N está na palavra e na posição certa.</p>
+
+                        <ul>
+                            <li>I</li>
+                            <li class="exemplo-letra-amarela">N</li>
+                            <li>T</li>
+                            <li>E</li>
+                            <li>L</li>
+                        </ul>
+
+                        <p>A letra N está na palavra, mas está na posição errada.</p>
+
+                        <ul>
+                            <li>Z</li>
+                            <li>E</li>
+                            <li>L</li>
+                            <li>D</li>
+                            <li>A</li>
+                        </ul>
+
+                        <p>Nenhuma das letras acima está na palavra.</p>
+
+                    </div>
+
+                    <p class="instrucoes-p-final">São 3 palavras novas todos os dias. Boa sorte!</p>
+                </div>
+            </div>
+
+            <div class="configuracoes">
+                <div class="configuracoes-header">
+                    <h2>CONFIGURAÇÕES</h2>
+                    <p onclick="switchJanelaConfiguracoes()" onmouseover="playButtonHoverAudio()">✖</p>
+                </div>
+            </div>
+
             <div class="grid">
                 <div class="grid-item enabled"></div>
                 <div class="grid-item enabled"></div>
                 <div class="grid-item enabled"></div>
                 <div class="grid-item enabled"></div>
                 <div class="grid-item enabled"></div>
-                
+
                 <div class="grid-item disabled"></div>
                 <div class="grid-item disabled"></div>
                 <div class="grid-item disabled"></div>
                 <div class="grid-item disabled"></div>
                 <div class="grid-item disabled"></div>
-                
+
                 <div class="grid-item disabled"></div>
                 <div class="grid-item disabled"></div>
                 <div class="grid-item disabled"></div>
                 <div class="grid-item disabled"></div>
                 <div class="grid-item disabled"></div>
-                
+
                 <div class="grid-item disabled"></div>
                 <div class="grid-item disabled"></div>
                 <div class="grid-item disabled"></div>
                 <div class="grid-item disabled"></div>
                 <div class="grid-item disabled"></div>
-                
+
                 <div class="grid-item disabled"></div>
                 <div class="grid-item disabled"></div>
                 <div class="grid-item disabled"></div>
@@ -94,7 +161,7 @@
                 <div class="key" onclick="inputTecladoVirtual('O')">O</div>
                 <div class="key" onclick="inputTecladoVirtual('P')">P</div>
             </div>
-        
+
             <!-- Linha 2 -->
             <div class="row">
                 <div class="key" onclick="inputTecladoVirtual('A')">A</div>
@@ -108,7 +175,7 @@
                 <div class="key" onclick="inputTecladoVirtual('L')">L</div>
                 <div class="key wide" onclick="inputTecladoVirtual('Backspace')">⌫</div>
             </div>
-        
+
             <!-- Linha 3 -->
             <div class="row">
                 <div class="key" onclick="inputTecladoVirtual('Z')">Z</div>
@@ -121,22 +188,25 @@
                 <div class="key wide" onclick="inputTecladoVirtual('Enter')">ENTER</div>
             </div>
         </div>
-
-
-        <!-- Detectar input dos cliques no teclado virtual -->
-        <script type="module" src="./JavaScript/functions/inputTecladoVirtual.js"></script>
-
-        <!-- Detectar input do teclado físico -->
-        <script type="module" src="./JavaScript/functions/inputTecladoFisico.js"></script>
-
-        <!-- Gerar palavra a ser adivinhada -->
-        <script type="module" src="./JavaScript/functions/obterPalavraAleatoria.js"></script>
-
-        <!-- Import biblioteca de animação de confetes -->
-        <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
-
-        <!-- Criar método que lança os confetes quando é chamado -->
-        <script type="module" src="./JavaScript/functions/confetti.js"></script>
     </div>
+
+    <!-- Detectar input dos cliques no teclado virtual -->
+    <script type="module" src="./JavaScript/functions/inputTecladoVirtual.js"></script>
+
+    <!-- Detectar input do teclado físico -->
+    <script type="module" src="./JavaScript/functions/inputTecladoFisico.js"></script>
+
+    <!-- Gerar palavra a ser adivinhada -->
+    <script type="module" src="./JavaScript/functions/obterPalavraAleatoria.js"></script>
+
+    <!-- Import biblioteca de animação de confetes -->
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+
+    <!-- Criar método que lança os confetes quando é chamado -->
+    <script type="module" src="./JavaScript/functions/confetti.js"></script>
+
+    <!-- Importar script responsável pelo menu -->
+    <script type="module" src="./JavaScript/menu.js"></script>
 </body>
+
 </html>
