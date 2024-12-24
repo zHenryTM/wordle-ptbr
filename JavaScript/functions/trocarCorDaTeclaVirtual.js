@@ -15,7 +15,7 @@ export function trocarCorDaTeclaVirtual(letra, cor)
 
         tecla.classList.add(cor);
     }
-    else if (tecla.classList.value == "tecla wrong-position" && cor == "right-position")
+    else if (tecla.classList.value == "flexbox tecla wrong-position" && cor == "right-position")
     {
         // Se entrar aqui, significa que a tecla virtual está amarela e será trocada para verde
 
