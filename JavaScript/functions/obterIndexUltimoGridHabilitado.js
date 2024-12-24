@@ -10,7 +10,7 @@ export function obterIndexUltimoGridHabilitado()
 
     for (var index = 0; index < gridsLen; index++)
     {
-        if (grids[index].className != "grid-item disabled")
+        if (grids[index].className != "flexbox grid-item disabled")
         {
             indexUltimoGridHabilitado = index;
         }
