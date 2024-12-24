@@ -4,8 +4,7 @@ Versão brasileira do jogo Wordle com features novas elaboradas pelos criadores 
 
 ## Estágio atual:
 
-![imagem atual do jogo](https://github.com/user-attachments/assets/8f7e2a5a-6e7c-417b-a633-1bb67da430ae)
-
+![image](https://github.com/user-attachments/assets/1f4f64d7-d71d-4f7f-b3b4-edef3465d9f4)
 
 ## Sobre o estágio atual do jogo
 
