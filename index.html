@@ -22,173 +22,171 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body class="flexbox">
+    <!-- ELEMENTOS DA SEÇÃO MENU -->
     <div class="menu-pelicula" onclick="fecharJanela()"></div>
 
-    <div id="programa-principal">
-
-        <div id="header">
-            <div class="como-jogar" onclick="switchJanelaInstrucoes()" onmouseover="playButtonHoverAudio()">
-                <i class="fa-solid fa-lg fa-question"></i>
-            </div>
-
-
-            <div class="logo">
-                <h1>Wordle</h1>
-            </div>
-
-
-            <div class="config" onclick="switchJanelaConfiguracoes()" onmouseover="playButtonHoverAudio()">
-                <i class="fa-solid fa-lg fa-gear"></i>
-            </div>
+    <div class="janela-menu instrucoes">  <!-- JANELA DA SEÇÃO INSTRUÇÕES -->
+        <div class="flexbox janela-menu-header">
+            <h2>COMO JOGAR</h2>
+            <h4 class="icone" onmouseover="playButtonHoverAudio()" onclick="fecharJanela()" style="position: absolute; top: 0; right: 5px;">✖</h2>
         </div>
 
+        <div class="janela-menu-body">
+            <p">Descubra as palavras do dia. Use o botão Enter para enviar sua tentativa. Depois de cada tentativa, a cor dos quadrados irá mudar de acordo com os seguintes exemplos:</p>
 
+            <div>
+            <ul class="flexbox"><li class="flexbox">H</li><li class="flexbox">E</li><li class="flexbox right-position">N</li><li class="flexbox">R</li><li class="flexbox">Y</li></ul>
+            <p>A letra N está na palavra e na posição certa.</p>
 
-        <div id="jogo">
+            <ul class="flexbox"><li class="flexbox">I</li><li class="flexbox wrong-position">N</li><li class="flexbox">T</li><li class="flexbox">E</li><li class="flexbox">L</li></ul>
+            <p>A letra N está na palavra, mas está na posição errada.</p>
 
-            <div class="feedback">
-                <p>Palavra inválida</p>
-            </div>
-
-            <div class="instrucoes">
-                <div class="instrucoes-header">
-                    <h2>COMO JOGAR</h2>
-                    <p onclick="switchJanelaInstrucoes()" onmouseover="playButtonHoverAudio()">✖</p>
-                </div>
-
-                <div class="instrucoes-body">
-                    <div class="texto-pre-exemplos">
-                        <p>Descubra as palavras do dia. Use o botão Enter para enviar sua tentativa.<br><br>
-                            Depois de cada tentativa, a cor dos quadrados irá mudar de acordo com os seguintes exemplos:
-                        </p>
-                        <br>
-                    </div>
-                    <div class="exemplos">
-                        <ul>
-                            <li>H</li>
-                            <li>E</li>
-                            <li class="exemplo-letra-verde">N</li>
-                            <li>R</li>
-                            <li>Y</li>
-                        </ul>
-
-                        <p>A letra N está na palavra e na posição certa.</p>
-
-                        <ul>
-                            <li>I</li>
-                            <li class="exemplo-letra-amarela">N</li>
-                            <li>T</li>
-                            <li>E</li>
-                            <li>L</li>
-                        </ul>
-
-                        <p>A letra N está na palavra, mas está na posição errada.</p>
-
-                        <ul>
-                            <li>Z</li>
-                            <li>E</li>
-                            <li>L</li>
-                            <li>D</li>
-                            <li>A</li>
-                        </ul>
-
-                        <p>Nenhuma das letras acima está na palavra.</p>
-
-                    </div>
-
-                    <p class="instrucoes-p-final">São 3 palavras novas todos os dias. Boa sorte!</p>
-                </div>
-            </div>
-
-            <div class="configuracoes">
-                <div class="configuracoes-header">
-                    <h2>CONFIGURAÇÕES</h2>
-                    <p onclick="switchJanelaConfiguracoes()" onmouseover="playButtonHoverAudio()">✖</p>
-                </div>
-            </div>
-
-            <div class="grid">
-                <div class="grid-item enabled"></div>
-                <div class="grid-item enabled"></div>
-                <div class="grid-item enabled"></div>
-                <div class="grid-item enabled"></div>
-                <div class="grid-item enabled"></div>
-
-                <div class="grid-item disabled"></div>
-                <div class="grid-item disabled"></div>
-                <div class="grid-item disabled"></div>
-                <div class="grid-item disabled"></div>
-                <div class="grid-item disabled"></div>
-
-                <div class="grid-item disabled"></div>
-                <div class="grid-item disabled"></div>
-                <div class="grid-item disabled"></div>
-                <div class="grid-item disabled"></div>
-                <div class="grid-item disabled"></div>
-
-                <div class="grid-item disabled"></div>
-                <div class="grid-item disabled"></div>
-                <div class="grid-item disabled"></div>
-                <div class="grid-item disabled"></div>
-                <div class="grid-item disabled"></div>
-
-                <div class="grid-item disabled"></div>
-                <div class="grid-item disabled"></div>
-                <div class="grid-item disabled"></div>
-                <div class="grid-item disabled"></div>
-                <div class="grid-item disabled"></div>
-
-                <div class="grid-item disabled"></div>
-                <div class="grid-item disabled"></div>
-                <div class="grid-item disabled"></div>
-                <div class="grid-item disabled"></div>
-                <div class="grid-item disabled"></div>
-            </div>
-        </div>
-
-        <div id="teclado">
-            <!-- Linha 1 -->
-            <div class="row">
-                <div class="key" onclick="inputTecladoVirtual('Q')">Q</div>
-                <div class="key" onclick="inputTecladoVirtual('W')">W</div>
-                <div class="key" onclick="inputTecladoVirtual('E')">E</div>
-                <div class="key" onclick="inputTecladoVirtual('R')">R</div>
-                <div class="key" onclick="inputTecladoVirtual('T')">T</div>
-                <div class="key" onclick="inputTecladoVirtual('Y')">Y</div>
-                <div class="key" onclick="inputTecladoVirtual('U')">U</div>
-                <div class="key" onclick="inputTecladoVirtual('I')">I</div>
-                <div class="key" onclick="inputTecladoVirtual('O')">O</div>
-                <div class="key" onclick="inputTecladoVirtual('P')">P</div>
-            </div>
-
-            <!-- Linha 2 -->
-            <div class="row">
-                <div class="key" onclick="inputTecladoVirtual('A')">A</div>
-                <div class="key" onclick="inputTecladoVirtual('S')">S</div>
-                <div class="key" onclick="inputTecladoVirtual('D')">D</div>
-                <div class="key" onclick="inputTecladoVirtual('F')">F</div>
-                <div class="key" onclick="inputTecladoVirtual('G')">G</div>
-                <div class="key" onclick="inputTecladoVirtual('H')">H</div>
-                <div class="key" onclick="inputTecladoVirtual('J')">J</div>
-                <div class="key" onclick="inputTecladoVirtual('K')">K</div>
-                <div class="key" onclick="inputTecladoVirtual('L')">L</div>
-                <div class="key wide" onclick="inputTecladoVirtual('Backspace')">⌫</div>
-            </div>
-
-            <!-- Linha 3 -->
-            <div class="row">
-                <div class="key" onclick="inputTecladoVirtual('Z')">Z</div>
-                <div class="key" onclick="inputTecladoVirtual('X')">X</div>
-                <div class="key" onclick="inputTecladoVirtual('C')">C</div>
-                <div class="key" onclick="inputTecladoVirtual('V')">V</div>
-                <div class="key" onclick="inputTecladoVirtual('B')">B</div>
-                <div class="key" onclick="inputTecladoVirtual('N')">N</div>
-                <div class="key" onclick="inputTecladoVirtual('M')">M</div>
-                <div class="key wide" onclick="inputTecladoVirtual('Enter')">ENTER</div>
+            <ul class="flexbox"><li class="flexbox">Z</li><li class="flexbox">E</li><li class="flexbox">L</li><li class="flexbox">D</li><li class="flexbox">A</li></ul>
+            <p>Nenhuma das letras acima está na palavra.</p>
+            <h3 style="text-align: center;">Boa sorte!</h3>
             </div>
         </div>
     </div>
+
+    <div class="janela-menu configuracoes">  <!-- JANELA DA SEÇÃO CONFIGURAÇÕES -->
+        <div class="flexbox janela-menu-header">
+            <h2>CONFIGURAÇÕES</h2>
+            <h4 class="icone" onmouseover="playButtonHoverAudio()" onclick="fecharJanela()" style="position: absolute; top: 0; right: 5px;">✖</h2>
+        </div>
+
+        <div class="janela-menu-body">
+            <p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta mollitia sunt neque labore nostrum. Illo iure, corporis accusantium ut corrupti impedit, sapiente vero fugiat laudantium atque, aut in temporibus pariatur.</p>
+
+            <div>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque suscipit distinctio deserunt ipsa alias quam, aut hic, animi repellendus maxime molestias necessitatibus earum, deleniti impedit nemo libero harum sequi rem.</p>
+            </div>
+        </div>
+    </div>
+    <!-- FIM ELEMENTOS DA SEÇÃO MENU -->
+
+
+
+
+    <!-- ELEMENTOS DO FEEDBACK (MENSAGEM QUE INFORMA SE O JOGADOR VENCEU, SE A PALAVRA DIGITADA É INVÁLIDA E QUAL ERA A PALAVRA CORRETA AO DAR GAME OVER -->
+    <div class="feedback">
+        <p></p>
+    </div>
+    <!-- FIM ELEMENTOS DO FEEDBACK (MENSAGEM QUE INFORMA SE O JOGADOR VENCEU, SE A PALAVRA DIGITADA É INVÁLIDA E QUAL ERA A PALAVRA CORRETA AO DAR GAME OVER -->
+
+
+
+
+    <!-- ELEMENTOS PRINCIPAIS DO JOGO - CABEÇALHO, GRIDS E TECLADO VIRTUAL -->
+    <div class="flexbox principal">
+        <div class="flexbox header">
+            <div class="btn-instrucoes" onclick="switchJanelaInstrucoes()" onmouseover="playButtonHoverAudio()">
+                <h2 class="icone">?</h2>
+            </div>
+
+            <div class="logo">
+                <h2 class="icone" style="margin-left: 14px;">WORDLE</h2>
+            </div>
+
+            <div class="btn-config" onclick="switchJanelaConfiguracoes()" onmouseover="playButtonHoverAudio()">
+                <h2 class="icone">⚙️</h2>
+            </div>
+        </div>
+
+        <div class="jogo">
+            <ul class="flexbox">
+                <li class="flexbox grid-item enabled"></li>
+                <li class="flexbox grid-item enabled"></li>
+                <li class="flexbox grid-item enabled"></li>
+                <li class="flexbox grid-item enabled"></li>
+                <li class="flexbox grid-item enabled"></li>
+            </ul>
+
+            <ul class="flexbox">
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+            </ul>
+
+            <ul class="flexbox">
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+            </ul>
+
+            <ul class="flexbox">
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+            </ul>
+
+            <ul class="flexbox">
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+            </ul>
+
+            <ul class="flexbox">
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+            </ul>
+        </div>
+
+        <div class="teclado">
+
+            <ul class="flexbox teclado-virtual">
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('Q')">Q</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('W')">W</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('E')">E</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('R')">R</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('T')">T</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('Y')">Y</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('U')">U</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('I')">I</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('O')">O</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('P')">P</li>
+            </ul>
+
+            <ul class="flexbox teclado-virtual">
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('A')">A</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('S')">S</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('D')">D</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('F')">F</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('G')">G</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('H')">H</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('J')">J</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('K')">K</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('L')">L</li>
+                <li class="flexbox tecla tecla-backspace" onclick="inputTecladoVirtual('Backspace')">⌫</li>
+            </ul>
+
+            <ul class="flexbox teclado-virtual">
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('Z')">Z</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('X')">X</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('C')">C</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('V')">V</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('B')">B</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('N')">N</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('M')">M</li>
+                <li class="flexbox tecla tecla-enter" onclick="inputTecladoVirtual('Enter')">ENTER</li>
+            </ul>
+        </div>
+    </div>
+    <!-- FIM ELEMENTOS PRINCIPAIS DO JOGO - CABEÇALHO, GRIDS E TECLADO VIRTUAL -->
+
+
+
 
     <!-- Detectar input dos cliques no teclado virtual -->
     <script type="module" src="./JavaScript/functions/inputTecladoVirtual.js"></script>
