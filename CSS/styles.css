@@ -124,6 +124,12 @@ footer
 }
 
 
+footer p, i
+{
+    color: #A6B1E1;
+}
+
+
 footer p
 {
     margin: 0 5px 0 0;
