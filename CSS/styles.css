@@ -316,7 +316,7 @@ footer p
     }
 
 
-    .janela-menu
+    .janela-menu, .principal
     {
         width: 90vw;
     }
@@ -326,12 +326,6 @@ footer p
     {
         font-size: 85%;
         top: 59px;
-    }
-
-
-    .principal
-    {
-        width: 90vw;
     }
 
 
