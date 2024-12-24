@@ -24,15 +24,6 @@
 }
 
 
-@media (min-width: 1200px)
-{
-    .janela-menu
-    {
-        width: 20%;
-    }
-}
-
-
 .janela-menu-header
 {   
     position: relative;
@@ -64,7 +55,7 @@
     font-style: normal;
     max-width: fit-content;
     position: absolute;
-    top: 2.5em;
+    top: 53px;
     padding: 0px 10px;
     border-radius: 25px;
     visibility: hidden;
@@ -292,3 +283,91 @@ footer p
     100% {transform: rotateY(360deg);}
 }
 /* FIM ANIMAÇÕES */
+
+
+
+
+/* MEDIA QUERIES */
+@media (min-width: 1200px)
+{
+    .janela-menu
+    {
+        width: 20%;
+    }
+}
+
+
+@media (max-width: 650px)
+{
+    body
+    {
+        width: 100vw;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    footer
+    {
+        bottom: 0;
+        font-size: 12px;
+        margin-top: auto;
+    }
+
+
+    .janela-menu
+    {
+        width: 90vw;
+    }
+
+
+    .feedback
+    {
+        font-size: 85%;
+        top: 59px;
+    }
+
+
+    .principal
+    {
+        width: 90vw;
+    }
+
+
+    .jogo li
+    {
+        width: 53px;
+        height: 48px;
+        font-size: 28px;
+    }
+
+
+    .teclado-virtual
+    {
+        gap: 3px;
+    }
+
+
+    .tecla
+    {
+        font-size: 16px;
+        max-width: 30px;
+        height: 40px;
+    }
+
+
+    .tecla:hover
+    {
+        scale: 100%;
+        background-color: #424874;
+        color: #F4EEFF;
+        border: 1px solid #424874;
+    }
+
+
+    .tecla-enter
+    {
+        max-width: 64px;
+    }
+}
