@@ -13,64 +13,82 @@
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Archivo+Black&family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Archivo+Black&family=Maven+Pro:wght@400..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body class="flexbox">
     <!-- ELEMENTOS DA SEÇÃO MENU -->
     <div class="menu-pelicula" onclick="fecharJanela()"></div>
 
-    <div class="janela-menu instrucoes">  <!-- JANELA DA SEÇÃO INSTRUÇÕES -->
+    <div class="janela-menu instrucoes"> <!-- JANELA DA SEÇÃO INSTRUÇÕES -->
         <div class="flexbox janela-menu-header">
             <h2>COMO JOGAR</h2>
-            <h4 class="icone" onmouseover="playButtonHoverAudio()" onclick="fecharJanela()" style="position: absolute; top: 0; right: 5px;">✖</h2>
+            <h4 class="icone" onmouseover="playButtonHoverAudio()" onclick="fecharJanela()"
+                style="position: absolute; top: 0; right: 5px;">✖</h2>
         </div>
 
         <div class="janela-menu-body">
-            <p">Descubra as palavras do dia. Use o botão Enter para enviar sua tentativa. Depois de cada tentativa, a cor dos quadrados irá mudar de acordo com os seguintes exemplos:</p>
+            <p">Descubra as palavras do dia. Use o botão Enter para enviar sua tentativa. Depois de cada tentativa, a
+                cor dos quadrados irá mudar de acordo com os seguintes exemplos:</p>
 
-            <div>
-            <ul class="flexbox"><li class="flexbox">H</li><li class="flexbox">E</li><li class="flexbox right-position">N</li><li class="flexbox">R</li><li class="flexbox">Y</li></ul>
-            <p>A letra N está na palavra e na posição certa.</p>
+                <div>
+                    <ul class="flexbox">
+                        <li class="flexbox">H</li>
+                        <li class="flexbox">E</li>
+                        <li class="flexbox right-position">N</li>
+                        <li class="flexbox">R</li>
+                        <li class="flexbox">Y</li>
+                    </ul>
+                    <p>A letra N está na palavra e na posição certa.</p>
 
-            <ul class="flexbox"><li class="flexbox">I</li><li class="flexbox wrong-position">N</li><li class="flexbox">T</li><li class="flexbox">E</li><li class="flexbox">L</li></ul>
-            <p>A letra N está na palavra, mas está na posição errada.</p>
+                    <ul class="flexbox">
+                        <li class="flexbox">I</li>
+                        <li class="flexbox wrong-position">N</li>
+                        <li class="flexbox">T</li>
+                        <li class="flexbox">E</li>
+                        <li class="flexbox">L</li>
+                    </ul>
+                    <p>A letra N está na palavra, mas está na posição errada.</p>
 
-            <ul class="flexbox"><li class="flexbox">Z</li><li class="flexbox">E</li><li class="flexbox">L</li><li class="flexbox">D</li><li class="flexbox">A</li></ul>
-            <p>Nenhuma das letras acima está na palavra.</p>
-            <h3 style="text-align: center;">Boa sorte!</h3>
-            </div>
+                    <ul class="flexbox">
+                        <li class="flexbox">Z</li>
+                        <li class="flexbox">E</li>
+                        <li class="flexbox">L</li>
+                        <li class="flexbox">D</li>
+                        <li class="flexbox">A</li>
+                    </ul>
+                    <p>Nenhuma das letras acima está na palavra.</p>
+                    <h3 style="text-align: center;">Boa sorte!</h3>
+                </div>
         </div>
     </div>
 
-    <div class="janela-menu configuracoes">  <!-- JANELA DA SEÇÃO CONFIGURAÇÕES -->
+    <div class="janela-menu configuracoes"> <!-- JANELA DA SEÇÃO CONFIGURAÇÕES -->
         <div class="flexbox janela-menu-header">
             <h2>CONFIGURAÇÕES</h2>
-            <h4 class="icone" onmouseover="playButtonHoverAudio()" onclick="fecharJanela()" style="position: absolute; top: 0; right: 5px;">✖</h2>
+            <h4 class="icone" onmouseover="playButtonHoverAudio()" onclick="fecharJanela()"
+                style="position: absolute; top: 0; right: 5px;">✖</h2>
         </div>
 
         <div class="janela-menu-body">
-            <p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta mollitia sunt neque labore nostrum. Illo iure, corporis accusantium ut corrupti impedit, sapiente vero fugiat laudantium atque, aut in temporibus pariatur.</p>
+            <p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta mollitia sunt neque labore nostrum. Illo
+                iure, corporis accusantium ut corrupti impedit, sapiente vero fugiat laudantium atque, aut in temporibus
+                pariatur.</p>
 
-            <div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque suscipit distinctio deserunt ipsa alias quam, aut hic, animi repellendus maxime molestias necessitatibus earum, deleniti impedit nemo libero harum sequi rem.</p>
-            </div>
+                <div>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque suscipit distinctio deserunt
+                        ipsa alias quam, aut hic, animi repellendus maxime molestias necessitatibus earum, deleniti
+                        impedit nemo libero harum sequi rem.</p>
+                </div>
         </div>
     </div>
     <!-- FIM ELEMENTOS DA SEÇÃO MENU -->
 
 
 
-
-    <!-- ELEMENTOS DO FEEDBACK (MENSAGEM QUE INFORMA SE O JOGADOR VENCEU, SE A PALAVRA DIGITADA É INVÁLIDA E QUAL ERA A PALAVRA CORRETA AO DAR GAME OVER -->
-    <div class="feedback">
-        <p></p>
-    </div>
-    <!-- FIM ELEMENTOS DO FEEDBACK (MENSAGEM QUE INFORMA SE O JOGADOR VENCEU, SE A PALAVRA DIGITADA É INVÁLIDA E QUAL ERA A PALAVRA CORRETA AO DAR GAME OVER -->
-
-
-
-
+    
     <!-- ELEMENTOS PRINCIPAIS DO JOGO - CABEÇALHO, GRIDS E TECLADO VIRTUAL -->
     <div class="flexbox principal">
         <div class="flexbox header">
@@ -86,6 +104,13 @@
                 <h2 class="icone">⚙️</h2>
             </div>
         </div>
+
+            <!-- ELEMENTOS DO FEEDBACK (MENSAGEM QUE INFORMA SE O JOGADOR VENCEU, SE A PALAVRA DIGITADA É INVÁLIDA E QUAL ERA A PALAVRA CORRETA AO DAR GAME OVER -->
+            <div class="feedback">
+                <p></p>
+            </div>
+            <!-- FIM ELEMENTOS DO FEEDBACK (MENSAGEM QUE INFORMA SE O JOGADOR VENCEU, SE A PALAVRA DIGITADA É INVÁLIDA E QUAL ERA A PALAVRA CORRETA AO DAR GAME OVER -->
+
 
         <div class="jogo">
             <ul class="flexbox">
@@ -179,7 +204,8 @@
 
         <footer class="flexbox">
             <p>Acesse o código fonte no perfil do desenvolvedor</p>
-            <a href="https://github.com/zHenryTM/wordle-ptbr" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/zHenryTM/wordle-ptbr" target="_blank" rel="noopener noreferrer"><i
+                    class="fa-brands fa-github"></i></a>
         </footer>
     </div>
     <!-- FIM ELEMENTOS PRINCIPAIS DO JOGO - CABEÇALHO, GRIDS E TECLADO VIRTUAL -->
