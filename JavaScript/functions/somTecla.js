@@ -1,6 +1,7 @@
+import { AudioManagement } from "../AudioManagement.js";
+
+
 export function somTecla()
 {
-    var audio = new Audio("./Assets/Audio/MarcosVinicius.mp3");
-    audio.volume = 0.3;
-    audio.play();
+    AudioManagement.play(AudioManagement.somTecladoPath, AudioManagement.getVolumeSomTeclado());
 }
