@@ -1,4 +1,51 @@
 /* SEÇÃO DO MENU - INSTRUÇÕES, CONFIGURAÇÕES E PELÍCULA */
+button
+{
+    border: 1px solid #F4EEFF;
+    border-radius: 8px;
+    background-color: #A6B1E1;
+    color: white;
+    padding: 5px;
+}
+
+
+button:hover
+{
+    cursor: pointer;
+    background-color: #424874;
+}
+
+
+button:active
+{
+    background-color: #A6B1E1;
+}
+
+
+#volumeDoTeclado, #volumeDosBotoes, #volumeDasMusicas
+{
+    -webkit-appearance: none;
+    height: 2px;
+    width: 150px;
+    background: #F4EEFF;
+}
+
+
+#volumeDoTeclado::-webkit-slider-thumb, #volumeDosBotoes::-webkit-slider-thumb, #volumeDasMusicas::-webkit-slider-thumb
+{
+    -webkit-appearance: none;
+    height: 15px;
+    width: 6px;
+    background: #A6B1E1;
+}
+
+
+#volumeDoTeclado:disabled::-webkit-slider-thumb, #volumeDosBotoes:disabled::-webkit-slider-thumb, #volumeDasMusicas:disabled::-webkit-slider-thumb
+{
+    background: #2A004E;
+}
+
+
 .menu-pelicula
 {
     position: absolute;
@@ -38,6 +85,38 @@
     font-size: 22px;
     color: #A6B1E1;
     margin: 0 0.5%;
+}
+
+
+.mutar-efeitos-sonoros
+{
+    width: fit-content;
+}
+
+
+.mutar-efeitos-sonoros button
+{
+    font-size: 12px;
+    padding: 2px 5px;
+    margin-left: 7px;
+}
+
+
+.janela-menu-footer
+{
+    margin: 30px 0px 10px 0px;
+}
+
+
+.janela-menu-footer button
+{
+    font-size: 16px;
+}
+
+
+.p-config
+{
+    margin: 15px 0 0 0;
 }
 /* FIM SEÇÃO DO MENU - INSTRUÇÕES, CONFIGURAÇÕES E PELÍCULA */
 
