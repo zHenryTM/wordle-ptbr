@@ -8,6 +8,7 @@ import { flipAnimation } from "./flipAnimation.js";
 import { feedback } from "./feedback.js";
 import { lancarConfetes } from "./confetti.js";
 import { obterIndexUltimoGridHabilitado } from "./obterIndexUltimoGridHabilitado.js";
+import { AudioManagement } from "../AudioManagement.js";
  
 
 function indexOfLetter(palavra, letra)
@@ -115,9 +116,7 @@ function rotinaDeVitoria()
      * Este método é responsável pelos efeitos audiovisuais e pelo comportamento do jogo.
     */
 
-    var audio = new Audio("./Assets/Audio/SomVitoria.mp3");
-    audio.volume = 0.12;
-    audio.play();
+    AudioManagement.play(AudioManagement.somVitoriaPath, AudioManagement.getVolumeSomMusica());
 
     feedback("Você venceu!", "verde");
     lancarConfetes();
@@ -127,9 +126,7 @@ function rotinaDeVitoria()
 
 function gameOver() 
 {
-    var audio = new Audio("./Assets/Audio/SomDerrota.mp3");
-    audio.volume = 0.5;
-    audio.play();
+    AudioManagement.play(AudioManagement.somDerrotaPath, AudioManagement.getVolumeSomMusica());
 
     feedback("Palavra correta: " + obterPalavraAleatoriaComAcento(), "vermelho", 60000);
 }
