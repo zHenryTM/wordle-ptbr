@@ -73,22 +73,37 @@
         </div>
 
         <div class="janela-menu-body">
-            <p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta mollitia sunt neque labore nostrum. Illo
-                iure, corporis accusantium ut corrupti impedit, sapiente vero fugiat laudantium atque, aut in temporibus
-                pariatur.</p>
+            <div class="flexbox mutar-efeitos-sonoros">
+                <p>Mutar efeitos sonoros</p>
+                <input type="checkbox" name="mutarEfeitosSonoros" id="mutarEfeitosSonoros">
+                <button onclick="muteAllSounds()">Confirmar</button>
+            </div>
 
-                <div>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque suscipit distinctio deserunt
-                        ipsa alias quam, aut hic, animi repellendus maxime molestias necessitatibus earum, deleniti
-                        impedit nemo libero harum sequi rem.</p>
-                </div>
+            <div>
+                <p class="p-config">Volume do teclado</p>
+                <input type="range" name="volumeDoTeclado" id="volumeDoTeclado" min="0.0" max="1.0" step="0.1" value="0.3">
+            </div>
+
+            <div>
+                <p class="p-config">Volume do botões</p>
+                <input type="range" name="volumeDosBotoes" id="volumeDosBotoes" min="0.0" max="1.0" step="0.1" value="0.1">
+            </div>
+
+            <div>
+                <p class="p-config">Volume das músicas</p>
+                <input type="range" name="volumeDasMusicas" id="volumeDasMusicas" min="0.0" max="1.0" step="0.1" value="0.2">
+            </div>
+        </div>
+
+        <div class="flexbox janela-menu-footer">
+            <button onclick="resetValues()">Resetar Valores</button>
         </div>
     </div>
     <!-- FIM ELEMENTOS DA SEÇÃO MENU -->
 
 
 
-    
+
     <!-- ELEMENTOS PRINCIPAIS DO JOGO - CABEÇALHO, GRIDS E TECLADO VIRTUAL -->
     <div class="flexbox principal">
         <div class="flexbox header">
@@ -105,11 +120,11 @@
             </div>
         </div>
 
-            <!-- ELEMENTOS DO FEEDBACK (MENSAGEM QUE INFORMA SE O JOGADOR VENCEU, SE A PALAVRA DIGITADA É INVÁLIDA E QUAL ERA A PALAVRA CORRETA AO DAR GAME OVER -->
-            <div class="feedback">
-                <p></p>
-            </div>
-            <!-- FIM ELEMENTOS DO FEEDBACK (MENSAGEM QUE INFORMA SE O JOGADOR VENCEU, SE A PALAVRA DIGITADA É INVÁLIDA E QUAL ERA A PALAVRA CORRETA AO DAR GAME OVER -->
+        <!-- ELEMENTOS DO FEEDBACK (MENSAGEM QUE INFORMA SE O JOGADOR VENCEU, SE A PALAVRA DIGITADA É INVÁLIDA E QUAL ERA A PALAVRA CORRETA AO DAR GAME OVER -->
+        <div class="feedback">
+            <p></p>
+        </div>
+        <!-- FIM ELEMENTOS DO FEEDBACK (MENSAGEM QUE INFORMA SE O JOGADOR VENCEU, SE A PALAVRA DIGITADA É INVÁLIDA E QUAL ERA A PALAVRA CORRETA AO DAR GAME OVER -->
 
 
         <div class="jogo">
@@ -230,6 +245,9 @@
 
     <!-- Importar script responsável pelo menu -->
     <script type="module" src="./JavaScript/menu.js"></script>
+
+    <!-- Importar script responsável pelos áudios -->
+    <script type="module" src="./JavaScript/AudioManagement.js"></script>
 </body>
 
 </html>
