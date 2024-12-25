@@ -304,8 +304,6 @@ footer p
     {
         width: 100vw;
         height: 100vh;
-        align-items: center;
-        justify-content: center;
     }
 
 
@@ -313,7 +311,6 @@ footer p
     {
         bottom: 0;
         font-size: 12px;
-        margin-top: auto;
     }
 
 
@@ -326,6 +323,7 @@ footer p
     .principal
     {
         height: 100vh!important;
+        justify-content: space-around;
     }
 
 
