@@ -1,3 +1,6 @@
+import { AudioManagement } from "./AudioManagement.js";
+
+
 export class Menu 
 {
     /**
@@ -18,7 +21,6 @@ export class Menu
     static configuracoes = document.getElementsByClassName("configuracoes")[0];
     static instrucoesEstaVisivel = false;
     static configuracoesEstaVisivel = false;
-    static audio = new Audio("./Assets/Audio/SomButtonHover.mp3");
 
 
     static switchJanelaInstrucoes()
@@ -76,9 +78,7 @@ export class Menu
 
     static playButtonHoverAudio()
     {
-        this.audio.volume = 0.1;
-        this.audio.currentTime = 0;
-        this.audio.play();
+        AudioManagement.play(AudioManagement.somBotoesPath, AudioManagement.getVolumeSomBotoes());
     }
 
 }
