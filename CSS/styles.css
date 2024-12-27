@@ -24,7 +24,7 @@ button:active
 
 #volumeDoTeclado, #volumeDosBotoes, #volumeDasMusicas
 {
-    -webkit-appearance: none;
+    appearance: none;
     height: 2px;
     width: 150px;
     background: #F4EEFF;
@@ -119,6 +119,59 @@ button:active
     margin: 15px 0 0 0;
 }
 /* FIM SEÇÃO DO MENU - INSTRUÇÕES, CONFIGURAÇÕES E PELÍCULA */
+
+
+
+
+/* MENU COM CONTADOR ATÉ A PRÓXIMA PALAVRA */
+.contador
+{
+    visibility: hidden;
+    text-align: center;
+}
+
+
+.janela-menu-contador-main
+{
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+
+
+.janela-menu-contador-main-body
+{
+    margin: 40px 0;
+}
+
+
+.janela-menu-contador-main-footer h3
+{
+    margin-bottom: 8px;
+}
+
+
+.share-btn h4
+{
+    font-size: medium;
+    margin: 5px 0;
+    pointer-events: none;
+}
+
+
+.jaba
+{
+    margin-top: 10px;
+}
+
+
+.p-jaba
+{
+    margin: 0 5px 0 ;
+    font-size: 13px;
+    color: #A6B1E1;
+}
+/* FIM MENU COM CONTADOR ATÉ A PRÓXIMA PALAVRA */
 
 
 
