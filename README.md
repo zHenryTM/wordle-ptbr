@@ -1,29 +1,62 @@
 # Wordle-PtBR
 
-Versão brasileira do jogo Wordle com features novas elaboradas pelos criadores deste projeto.
+Este projeto é um clone do famoso jogo Wordle, que foi criado com o intuito de aplicar minha experiência sobre desenvolvimento de jogos com Unity e C# em um jogo para a web, enquanto eu aprimorava meu conhecimento acerca das tecnologias básicas de desenvolvimento web: HTML, CSS e JavaScript.
 
-## Estágio atual:
+### Imagem do jogo
 
-![image](https://github.com/user-attachments/assets/1f4f64d7-d71d-4f7f-b3b4-edef3465d9f4)
+![image](https://github.com/user-attachments/assets/14b41aae-df4b-4594-b107-a759ef6bbe96)
 
-## Sobre o estágio atual do jogo
+## Sumário
 
-O programa já está funcional, restando apenas pequenas melhorias de HTML e CSS.
-  
-### Próximos passos
+- Sobre o projeto
+- Tecnologias usadas
+- Onde jogar
+- Regras do jogo
+- Contribuição
+- Licença
+- Agradecimentos especiais
 
-- Criar tela de reinício rápido caso haja tentativas restantes.
+# Sobre o projeto
 
-## Sobre os desafios enfrentados durante o desenvolvimento
+Clone do jogo Wordle com palavras em português. Diferente das outras versões do jogo original em português, Wordle-PtBR está recheado de elementos que um bom jogo deve ter: áudios, animações e uma ótima exeperiência de usuário.
 
-Diversos desafios foram, e continuam sendo, superados durante o desenvolvimento do Wordle-PtBR, o que proporcionou, e continua proporcionando, diversos momentos de descoberta e aprendizado. Esse processo é fundamental para a melhora de nossas habilidades de programação e, por isso, é visto com muito orgulho.
+## Diferenças para o jogo original
 
-O primeiro grande desafio foi "importar" uma lista de palavras, que foi superado com a descoberta da função ```fetch()```.
+1. Limite diário de 3 palavras ao invés de uma.
+2. Animações de flip nas letras presentes na palavra.
+3. Animações de shake ao receber feedbacks do jogo.
+4. Efeito sonoro ao clicar e/ou passar o mouse por cima dos botões do jogo.
+5. Efeito sonoro de teclado mecânico ao digitar letras.
+6. Efeito sonoro ao acabar as tentativas.
+7. Efeito audiovisual de confetes ao adivinhar a palavra.
+8. Menu de configurações que permite configurar o volume dos efeitos sonoros.
 
-O segundo maior desafio foi referente ao tratamento de strings, que foi superado com o uso de Regex (Regular Expression) e as funções ```test()``` e ```includes()```.
+# Tecnologias usadas
 
-O terceiro, e maior desafio até então, foi a respeito da lógica do jogo, que verifica, a partir dos inputs do jogador, quais letras estão presentes na palavra sorteada pelo jogo, exibindo na tela quais letras estão nas posições corretas e quais não estão. Este problema foi resolvido após vários dias elaborando ideias, escrevendo várias lógicas diferentes no papel e testando no computador. 
+- HTML - Estrutura da página.
+- CSS - Estilização da página.
+- JavaScript - Interações com o usuário e comportamento da página.
+- JS-Confetti (Biblioteca feita por Vladimir Nikitin) - (Animação de confetes)[https://www.npmjs.com/package/js-confetti].
 
-A ideia escolhida para superar esse problema foi a seguinte:
+# Onde jogar
 
-converter a palavra sorteada e o input do jogador em objetos JavaScript (semelhantes ao dicionários em Python), em que cada letra das palavras se torna a chave e seus respectivos indíces dentro da string se tornam os valores; em seguida, verifica-se quais chaves estão presentes em ambos os objetos e analisa-se os seus valores; se houverem valores iguais, significa que as letras estão na posição correta, caso contrário, significa que estão na posição errada. 
+Você pode jogar através da web, pois o jogo está hospedado no Github Pages. Jogue clicando (aqui)[https://zhenrytm.github.io/wordle-ptbr/].
+
+# Regras do jogo
+
+Todos os dias, três novas palavras estarão disponíveis para você tentar adivinhar. Cada palavra tem 5 letras e é um subtantivo (no singular ou plural) ou um verbo no infinitivo. Para cada palavra, você terá 6 tentativas para adivinhá-la.
+
+# Contribuições
+
+Contribuições são sempre bem-vindas! Se você quiser melhorar ou acrescentar funções ao jogo, sinta-se à vontade para abrir issues ou enviar pull requests. Críticas também são muito bem-vindas, pois me ajuda a evoluir como programador.
+
+# Licença
+
+Este projeto está licenciado sob a __MIT License__. Veja o arquivo LICENSE para mais detalhes.
+
+# Agradecimentos especiais
+
+- (Janderson Gustavo)[https://github.com/GuOffL] - Meu amigo de infância que me ajudou implementando Regex nos arquivos de captação de inputs, o que tornou o código mais limpo e compacto. Além disso, o estudo que fiz sobre o código dele me deu um conhecimento que pude usar na lógica do jogo, acerca dos métodos `test()`e `includes()`, tornando este projeto possível.
+- (Niedson Emanuel)[https://github.com/NiedsonEmanoel] - Um grande amigo e mentor, que me proporciona momentos de descoberta ao me apresentar constantemente a novos conhecimentos.
+- Marcos Vinícius - um grande amigo, braço direito, parceiro de vídeo game e que possui sonhos ambiciosos assim como eu. Foi fundamental no desenvolvimento deste projeto ao me dar apoio constante. Além disso, foi ele quem escolheu o áudio de teclado mecânico, ao qual eu o nomeei com seu nome como uma homenagem.
+- Gabriel, o "Pâmela" - Meu amigo oriundo dos vídeos games e que se demonstrou ser um grande companheiro. Ele é extremamente curioso acerca do mundo da programação e está começando os seus estudos nesse universo. Ficou horas em call comigo enquanto eu escrevia mais e mais linhas de código, demonstrando apoio para com este projeto.
