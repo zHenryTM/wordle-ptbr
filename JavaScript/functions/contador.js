@@ -7,7 +7,7 @@ export function contador()
     function contadorEmTempoReal()
     {
         var tempoAtual = new Date();
-        var horaAtual = String(24 - tempoAtual.getHours());
+        var horaAtual = String(23 - tempoAtual.getHours());
         var minutoAtual = String(60 - tempoAtual.getMinutes());
         var segundoAtual = String(60 - tempoAtual.getSeconds());
         
