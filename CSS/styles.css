@@ -62,7 +62,7 @@ button:active
     background-color: #424874;
     color:#F4EEFF;
     position: absolute;
-    top: 10px;
+    top: 150px;
     width: 40%;
     border-radius: 15px;
     padding: 0px 15px;
@@ -123,7 +123,7 @@ button:active
 
 
 
-/* MENU COM CONTADOR ATÉ A PRÓXIMA PALAVRA */
+/* SEÇÃO MENU COM CONTADOR ATÉ A PRÓXIMA PALAVRA */
 .contador
 {
     visibility: hidden;
@@ -171,7 +171,33 @@ button:active
     font-size: 13px;
     color: #A6B1E1;
 }
-/* FIM MENU COM CONTADOR ATÉ A PRÓXIMA PALAVRA */
+/* FIM SEÇÃO MENU COM CONTADOR ATÉ A PRÓXIMA PALAVRA */
+
+
+
+
+/* SEÇÃO DE JANELA DE REINÍCIO RÁPIDO */
+.reinicio-rapido-main
+{
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px 10px 10px 10px;
+}
+
+
+.reinicio-rapido-header h2 
+{
+    text-align: center;
+    margin: 0;
+}
+
+
+.reinicio-rapido-body
+{
+    flex-direction: column;
+    margin: 70px 0;
+}
+/* FIM SEÇÃO DE JANELA DE REINÍCIO RÁPIDO */
 
 
 
