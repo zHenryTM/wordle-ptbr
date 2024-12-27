@@ -48,7 +48,7 @@ Todos os dias, três novas palavras estarão disponíveis para você tentar adiv
 
 # Contribuições
 
-Contribuições são sempre bem-vindas! Se você quiser melhorar ou acrescentar funções ao jogo, sinta-se à vontade para abrir issues ou enviar pull requests. Críticas também são muito bem-vindas, pois me ajuda a evoluir como programador.
+Contribuições são sempre bem-vindas! Se você quiser melhorar ou acrescentar funções ao jogo, sinta-se à vontade para abrir ___issues___ ou enviar ___pull requests___. __Críticas__ também são muito bem-vindas, pois me ajuda a evoluir como programador.
 
 # Licença
 
@@ -57,6 +57,9 @@ Este projeto está licenciado sob a __MIT License__. Veja o arquivo LICENSE para
 # Agradecimentos especiais
 
 - [Janderson Gustavo](https://github.com/GuOffL) - Meu amigo de infância que me ajudou implementando Regex nos arquivos de captação de inputs, o que tornou o código mais limpo e compacto. Além disso, o estudo que fiz sobre o código dele me deu um conhecimento que pude usar na lógica do jogo, acerca dos métodos `test()`e `includes()`, tornando este projeto possível.
-- [Niedson Emanuel](https://github.com/NiedsonEmanoel) - Um grande amigo e mentor, que me proporciona momentos de descoberta ao me apresentar constantemente a novos conhecimentos.
+  
+- [Niedson Emanuel](https://github.com/NiedsonEmanoel) - Um grande amigo e mentor, que me proporciona momentos de descoberta ao me apresentar constantemente a novos conhecimentos, sempre dá boas ideias e me ensina __muita__ coisa.
+  
 - Marcos Vinícius - um grande amigo, braço direito, parceiro de vídeo game e que possui sonhos ambiciosos assim como eu. Foi fundamental no desenvolvimento deste projeto ao me dar apoio constante. Além disso, foi ele quem escolheu o áudio de teclado mecânico, ao qual eu o nomeei com seu nome como uma homenagem.
+  
 - Gabriel, o "Pâmela" - Meu amigo oriundo dos vídeos games e que se demonstrou ser um grande companheiro. Ele é extremamente curioso acerca do mundo da programação e está começando os seus estudos nesse universo. Ficou horas em call comigo enquanto eu escrevia mais e mais linhas de código, demonstrando apoio para com este projeto.
