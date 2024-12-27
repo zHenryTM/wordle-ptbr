@@ -1,7 +1,6 @@
 import { tratarPalavraAleatoria } from "./tratarPalavraAleatoria.js";
 import { removerAcentosGraficos } from "./removerAcentosGraficos.js";
 import { LocalStorageManagement } from "../LocalStorageManagement.js";
-import { contador } from "./contador.js";
 import { Menu } from "../menu.js";
 
 
@@ -61,9 +60,6 @@ async function iniciarJogo()
         // Tratando a palavra - removendo acentos gráficos, espaços vazios e caracteres
         palavraAleatoria = tratarPalavraAleatoria(listaDePalavras[Math.floor(Math.random() * listaDePalavras.length)]);
         palavraAleatoriaSemAcento = removerAcentosGraficos(palavraAleatoria);
-
-        console.log(palavraAleatoria);
-        console.log(palavraAleatoriaSemAcento);
     }
     else
     {
@@ -71,9 +67,7 @@ async function iniciarJogo()
         LocalStorageManagement.resetEndGameDataAtMidnight();  // Reseta o limite diário caso seja um novo dia e recarrega a página automáticamente.
                                                               // Logo, se for um novo dia, os códigos daqui para baixo não serão executados.
 
-        document.getElementsByClassName("contador")[0].style.visibility = "visible";
-        Menu.pelicula.style.visibility = "visible";
-        contador();
+        Menu.exibirJanelaContador();
     }
 }
 
