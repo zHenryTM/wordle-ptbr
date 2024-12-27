@@ -8,20 +8,11 @@ Versão brasileira do jogo Wordle com features novas elaboradas pelos criadores 
 
 ## Sobre o estágio atual do jogo
 
-O programa já é capaz de:
-- Selecionar aleatoriamente uma palavra
-- Coletar os inputs do jogador
-- Tratar e comparar esses inputs com a palavra sorteada anteriormente
-- Verificar as posições corretas e/ou erradas das letras encontradas no input do jogador 
+O programa já está funcional, restando apenas pequenas melhorias de HTML e CSS.
   
 ### Próximos passos
 
-Embora o jogo já possua lógica, diversas funcionalidades precisam ser implementadas, como:
-
-- Animações para tornar o jogo mais agradável
-- Menu de configurações 
-- Instruções de como jogar o jogo
-- Melhorar responsividade para dispositiveis móveis
+- Criar tela de reinício rápido caso haja tentativas restantes.
 
 ## Sobre os desafios enfrentados durante o desenvolvimento
 
