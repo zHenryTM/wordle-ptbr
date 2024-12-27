@@ -1,4 +1,7 @@
 import { AudioManagement } from "./AudioManagement.js";
+import { LocalStorageManagement } from "./LocalStorageManagement.js";
+import { contador } from "./functions/contador.js";
+import { partidasRestantes } from "./functions/partidasRestantes.js";
 
 
 export class Menu 
@@ -7,20 +10,30 @@ export class Menu
      * Essa classe é responsável por gerenciar o menu do jogo, e isso inclui: 
      *      - A seção de instruções de como jogar (representada pela "?" na tela inicial);
      *      - A seção de configurações (representada pela engrenagem na tela inicial);
+     *      - A seção de contador (encontrada no HTML)
+     *      - A seção de reinicio rápido (encontrada no HTML)
      * 
      * 
      * Métodos:
-     *      - switchJanelaInstrucoes    -> alterna a visibilidade da div instrucoes entre hidden e visible, a depender do seu estado atual
-     *      - switchJanelaConfiguracoes -> alterna a visibilidade da div configuracoes entre hidden e visible, a depender do seu estado atual
-     *      - playButtonHoverAudio      -> toca um áudio assim que o mouse passa por cima dos botões do Menu
+     *      - switchJanelaInstrucoes        -> alterna a visibilidade da div instrucoes entre hidden e visible, a depender do seu estado atual
+     *      - switchJanelaConfiguracoes     -> alterna a visibilidade da div configuracoes entre hidden e visible, a depender do seu estado atual
+     *      - fecharJanelaReinicioRapido    -> define visibilidade da div reinicio-rapido para hidden
+     *      - fecharJanela                  -> fecha qualquer janela que estiver aberta
+     *      - exibirJanelaContador          -> exibe janela que informa a quantidade de tempo até o jogador poder jogar o jogo de novo
+     *      - exibirJanelaDeReinicioRapido  -> exibe a janela que oferece ao jogador opção rápida e prática para reiniciar a página
+     *      - playButtonHoverAudio          -> toca um áudio assim que o mouse passa por cima dos botões do Menu
+     *      - recarregarPagina              -> recarrega a página, criando a ilusão de reiniciar o jogo
+     *      - copiarLink                    -> copia o link da página para enviar para amigos
     */
 
 
     static pelicula = document.getElementsByClassName("menu-pelicula")[0];
     static instrucoes = document.getElementsByClassName("instrucoes")[0];
     static configuracoes = document.getElementsByClassName("configuracoes")[0];
+    static reinicioRapido = document.getElementsByClassName("reinicio-rapido")[0];
     static instrucoesEstaVisivel = false;
     static configuracoesEstaVisivel = false;
+    static reinicioRapidoEstaVisivel = false;
 
 
     static switchJanelaInstrucoes()
@@ -57,6 +70,17 @@ export class Menu
     }
 
 
+    static fecharJanelaReinicioRapido()
+    {
+        if (this.reinicioRapidoEstaVisivel)
+        {
+            this.pelicula.style.visibility = "hidden";
+            this.reinicioRapido.style.visibility = "hidden";
+            this.reinicioRapidoEstaVisivel = false;
+        }
+    }
+
+
     static fecharJanela()
     {
         // Este método fecha as janelas de configurações ou instruções, a depender de qual estiver aberta.
@@ -73,6 +97,41 @@ export class Menu
             this.switchJanelaConfiguracoes();
             return;
         }
+
+        if (this.reinicioRapidoEstaVisivel)
+        {
+            this.fecharJanelaReinicioRapido();
+            return;
+        }
+    }
+
+
+    static exibirJanelaContador()
+    {
+        document.getElementsByClassName("contador")[0].style.visibility = "visible";
+
+        Menu.pelicula.style.visibility = "visible";
+
+        contador();
+    }
+
+
+    static exibirJanelaDeReinicioRapido()
+    {
+        if ((4 - LocalStorageManagement.getEndGameData().endGame) != 0)
+        {
+            var janelaReinicioRapido = document.getElementsByClassName("reinicio-rapido")[0];
+    
+            this.reinicioRapidoEstaVisivel = true;
+            janelaReinicioRapido.style.visibility = "visible";
+            Menu.pelicula.style.visibility = "visible";
+
+            partidasRestantes();
+        }
+        else
+        {
+            Menu.exibirJanelaContador();
+        }
     }
 
 
@@ -81,6 +140,19 @@ export class Menu
         AudioManagement.play(AudioManagement.somBotoesPath, AudioManagement.getVolumeSomBotoes());
     }
 
+
+    static recarregarPagina()
+    {
+        window.location.reload();
+    }
+
+
+    static copiarLink()
+    {
+        var link = "https://zhenrytm.github.io/wordle-ptbr/";
+
+        navigator.clipboard.writeText(link);
+    }
 }
 
 
@@ -88,3 +160,5 @@ window.switchJanelaInstrucoes = Menu.switchJanelaInstrucoes.bind(Menu);
 window.switchJanelaConfiguracoes = Menu.switchJanelaConfiguracoes.bind(Menu);
 window.playButtonHoverAudio = Menu.playButtonHoverAudio.bind(Menu);
 window.fecharJanela = Menu.fecharJanela.bind(Menu);
+window.recarregarPagina = Menu.recarregarPagina.bind(Menu);
+window.copiarLink = Menu.copiarLink.bind(Menu);
