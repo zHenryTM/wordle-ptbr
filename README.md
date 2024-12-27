@@ -1,6 +1,6 @@
 # Wordle-PtBR
 
-Este projeto é um clone do famoso jogo Wordle, que foi criado com o intuito de aplicar minha experiência sobre desenvolvimento de jogos com Unity e C# em um jogo para a web, enquanto eu aprimorava meu conhecimento acerca das tecnologias básicas de desenvolvimento web: HTML, CSS e JavaScript.
+Este projeto é um clone do famoso jogo Wordle, que foi criado com o intuito de aplicar minha experiência sobre desenvolvimento de jogos com Unity e C# em um jogo para a web, enquanto eu aprimorava meus conhecimentos acerca das tecnologias básicas de desenvolvimento web: HTML, CSS e JavaScript.
 
 ### Imagem do jogo
 
@@ -18,7 +18,7 @@ Este projeto é um clone do famoso jogo Wordle, que foi criado com o intuito de 
 
 # Sobre o projeto
 
-Clone do jogo Wordle com palavras em português. Diferente das outras versões do jogo original em português, Wordle-PtBR está recheado de elementos que um bom jogo deve ter: áudios, animações e uma ótima exeperiência de usuário.
+Clone do jogo Wordle com palavras em português. Diferente das outras versões do jogo original em português, Wordle-PtBR está recheado de elementos que um bom jogo deve ter: áudios, animações e uma ótima experiência de usuário.
 
 ## Diferenças para o jogo original
 
@@ -36,15 +36,15 @@ Clone do jogo Wordle com palavras em português. Diferente das outras versões d
 - HTML - Estrutura da página.
 - CSS - Estilização da página.
 - JavaScript - Interações com o usuário e comportamento da página.
-- JS-Confetti (Biblioteca feita por Vladimir Nikitin) - (Animação de confetes)[https://www.npmjs.com/package/js-confetti].
+- JS-Confetti (Biblioteca feita por Vladimir Nikitin) - [Animação de confetes](https://www.npmjs.com/package/js-confetti).
 
 # Onde jogar
 
-Você pode jogar através da web, pois o jogo está hospedado no Github Pages. Jogue clicando (aqui)[https://zhenrytm.github.io/wordle-ptbr/].
+Você pode jogar através da web, pois o jogo está hospedado no Github Pages. Jogue clicando [aqui](https://zhenrytm.github.io/wordle-ptbr/).
 
 # Regras do jogo
 
-Todos os dias, três novas palavras estarão disponíveis para você tentar adivinhar. Cada palavra tem 5 letras e é um subtantivo (no singular ou plural) ou um verbo no infinitivo. Para cada palavra, você terá 6 tentativas para adivinhá-la.
+Todos os dias, três novas palavras estarão disponíveis para você tentar adivinhar. Cada palavra tem 5 letras e é um verbo no infinitivo, pronome ou um substantivo (no singular ou plural). Para cada palavra, você terá 6 tentativas para adivinhá-la.
 
 # Contribuições
 
@@ -56,7 +56,7 @@ Este projeto está licenciado sob a __MIT License__. Veja o arquivo LICENSE para
 
 # Agradecimentos especiais
 
-- (Janderson Gustavo)[https://github.com/GuOffL] - Meu amigo de infância que me ajudou implementando Regex nos arquivos de captação de inputs, o que tornou o código mais limpo e compacto. Além disso, o estudo que fiz sobre o código dele me deu um conhecimento que pude usar na lógica do jogo, acerca dos métodos `test()`e `includes()`, tornando este projeto possível.
-- (Niedson Emanuel)[https://github.com/NiedsonEmanoel] - Um grande amigo e mentor, que me proporciona momentos de descoberta ao me apresentar constantemente a novos conhecimentos.
+- [Janderson Gustavo](https://github.com/GuOffL) - Meu amigo de infância que me ajudou implementando Regex nos arquivos de captação de inputs, o que tornou o código mais limpo e compacto. Além disso, o estudo que fiz sobre o código dele me deu um conhecimento que pude usar na lógica do jogo, acerca dos métodos `test()`e `includes()`, tornando este projeto possível.
+- [Niedson Emanuel](https://github.com/NiedsonEmanoel) - Um grande amigo e mentor, que me proporciona momentos de descoberta ao me apresentar constantemente a novos conhecimentos.
 - Marcos Vinícius - um grande amigo, braço direito, parceiro de vídeo game e que possui sonhos ambiciosos assim como eu. Foi fundamental no desenvolvimento deste projeto ao me dar apoio constante. Além disso, foi ele quem escolheu o áudio de teclado mecânico, ao qual eu o nomeei com seu nome como uma homenagem.
 - Gabriel, o "Pâmela" - Meu amigo oriundo dos vídeos games e que se demonstrou ser um grande companheiro. Ele é extremamente curioso acerca do mundo da programação e está começando os seus estudos nesse universo. Ficou horas em call comigo enquanto eu escrevia mais e mais linhas de código, demonstrando apoio para com este projeto.
