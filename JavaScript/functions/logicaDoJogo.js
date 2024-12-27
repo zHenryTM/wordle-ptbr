@@ -9,6 +9,7 @@ import { feedback } from "./feedback.js";
 import { lancarConfetes } from "./confetti.js";
 import { obterIndexUltimoGridHabilitado } from "./obterIndexUltimoGridHabilitado.js";
 import { AudioManagement } from "../AudioManagement.js";
+import { LocalStorageManagement } from "../LocalStorageManagement.js";
  
 
 function indexOfLetter(palavra, letra)
@@ -120,7 +121,8 @@ function rotinaDeVitoria()
 
     feedback("Você venceu!", "verde");
     lancarConfetes();
-    desabilitarGridsHabilitados()
+    desabilitarGridsHabilitados() 
+    LocalStorageManagement.setEndGameData();
 }
 
 
@@ -129,30 +131,35 @@ function gameOver()
     AudioManagement.play(AudioManagement.somDerrotaPath, AudioManagement.getVolumeSomMusica());
 
     feedback("Palavra correta: " + obterPalavraAleatoriaComAcento(), "vermelho", 60000);
+
+    LocalStorageManagement.setEndGameData();
 }
 
 
 export function logicaDoJogo()
 {
-    var palavra = obterPalavraAleatoria();
-    var palpite = pegarPalpite();
-    var objeto_palavra = obterObjeto(palavra);
-    var objeto_palpite = obterObjeto(palpite);
-    var chavesIguais = obterChavesIguais(objeto_palavra, objeto_palpite);
-
-    compararLetras(objeto_palavra, objeto_palpite, chavesIguais);
-
-    if (venceu())
+    if (LocalStorageManagement.getEndGameData().endGame <= 3)
     {
-        rotinaDeVitoria();
-        return;
-    }
+        var palavra = obterPalavraAleatoria();
+        var palpite = pegarPalpite();
+        var objeto_palavra = obterObjeto(palavra);
+        var objeto_palpite = obterObjeto(palpite);
+        var chavesIguais = obterChavesIguais(objeto_palavra, objeto_palpite);
 
-    if (obterIndexUltimoGridHabilitado() == 29)
-    {
-        // Entrará aqui caso acabe todas as chances de se acertar a palavra
-        gameOver();
+        compararLetras(objeto_palavra, objeto_palpite, chavesIguais);
+
+        if (venceu())
+        {
+            rotinaDeVitoria();
+            return;
+        }
+
+        if (obterIndexUltimoGridHabilitado() == 29)
+        {
+            // Entrará aqui caso acabe todas as chances de se acertar a palavra
+            gameOver();
+        }
+        
+        trocarGrids();
     }
-    
-    trocarGrids();
 }
