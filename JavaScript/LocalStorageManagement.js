@@ -26,18 +26,15 @@ export class LocalStorageManagement
 
     static resetEndGameDataAtMidnight()
     {
-        if (this.getEndGameData().endGame <= 3)
-        {
-            // It means that there are chances available yet
-            var nowInMs = new Date().getTime();
-            var timeStamp = this.getEndGameData().timeStamp;
+        // It means that there are chances available yet
+        var nowInMs = new Date().getTime();
+        var timeStamp = this.getEndGameData().timeStamp;
 
-            if (nowInMs >= timeStamp)
-            {
-                // It means that the timeStamp has expired and the data can be deleted
-                localStorage.clear();
-                window.location.reload();
-            }
+        if (nowInMs >= timeStamp)
+        {
+            // It means that the timeStamp has expired and the data can be deleted
+            localStorage.clear();
+            window.location.reload();
         }
     }
 }
