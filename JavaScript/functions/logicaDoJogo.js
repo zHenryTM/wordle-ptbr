@@ -10,6 +10,8 @@ import { lancarConfetes } from "./confetti.js";
 import { obterIndexUltimoGridHabilitado } from "./obterIndexUltimoGridHabilitado.js";
 import { AudioManagement } from "../AudioManagement.js";
 import { LocalStorageManagement } from "../LocalStorageManagement.js";
+import { partidasRestantes } from "./partidasRestantes.js";
+import { Menu } from "../menu.js";
  
 
 function indexOfLetter(palavra, letra)
@@ -118,21 +120,22 @@ function rotinaDeVitoria()
     */
 
     AudioManagement.play(AudioManagement.somVitoriaPath, AudioManagement.getVolumeSomMusica());
+    LocalStorageManagement.setEndGameData();
+    Menu.exibirJanelaDeReinicioRapido();
 
     feedback("Você venceu!", "verde");
     lancarConfetes();
     desabilitarGridsHabilitados() 
-    LocalStorageManagement.setEndGameData();
 }
 
 
 function gameOver() 
 {
     AudioManagement.play(AudioManagement.somDerrotaPath, AudioManagement.getVolumeSomMusica());
-
-    feedback("Palavra correta: " + obterPalavraAleatoriaComAcento(), "vermelho", 60000);
-
     LocalStorageManagement.setEndGameData();
+    Menu.exibirJanelaDeReinicioRapido();
+
+    feedback("Palavra correta: " + obterPalavraAleatoriaComAcento(), "vermelho", 60000);    
 }
 
 
