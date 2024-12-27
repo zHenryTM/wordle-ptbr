@@ -58,7 +58,7 @@ Este projeto está licenciado sob a __MIT License__. Veja o arquivo LICENSE para
 
 - [Janderson Gustavo](https://github.com/GuOffL) - Meu amigo de infância que me ajudou implementando Regex nos arquivos de captação de inputs, o que tornou o código mais limpo e compacto. Além disso, o estudo que fiz sobre o código dele me deu um conhecimento que pude usar na lógica do jogo, acerca dos métodos `test()`e `includes()`, tornando este projeto possível.
   
-- [Niedson Emanuel](https://github.com/NiedsonEmanoel) - Um grande amigo e mentor, que me proporciona momentos de descoberta ao me apresentar constantemente a novos conhecimentos, sempre dá boas ideias e me ensina __muita__ coisa.
+- [Niedson Emanoel](https://github.com/NiedsonEmanoel) - Um grande amigo e mentor, que me proporciona momentos de descoberta ao me apresentar constantemente a novos conhecimentos, sempre dá boas ideias e me ensina __muita__ coisa.
   
 - Marcos Vinícius - um grande amigo, braço direito, parceiro de vídeo game e que possui sonhos ambiciosos assim como eu. Foi fundamental no desenvolvimento deste projeto ao me dar apoio constante. Além disso, foi ele quem escolheu o áudio de teclado mecânico, ao qual eu o nomeei com seu nome como uma homenagem.
   
