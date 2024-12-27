@@ -16,6 +16,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Archivo+Black&family=Maven+Pro:wght@400..900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body class="flexbox">
@@ -26,7 +27,7 @@
         <div class="flexbox janela-menu-header">
             <h2>COMO JOGAR</h2>
             <h4 class="icone" onmouseover="playButtonHoverAudio()" onclick="fecharJanela()"
-                style="position: absolute; top: 0; right: 5px;">✖</h2>
+                style="position: absolute; top: 0; right: 5px;">✖</h4>
         </div>
 
         <div class="janela-menu-body">
@@ -69,7 +70,7 @@
         <div class="flexbox janela-menu-header">
             <h2>CONFIGURAÇÕES</h2>
             <h4 class="icone" onmouseover="playButtonHoverAudio()" onclick="fecharJanela()"
-                style="position: absolute; top: 0; right: 5px;">✖</h2>
+                style="position: absolute; top: 0; right: 5px;">✖</h4>
         </div>
 
         <div class="janela-menu-body">
@@ -81,22 +82,56 @@
 
             <div>
                 <p class="p-config">Volume do teclado</p>
-                <input type="range" name="volumeDoTeclado" id="volumeDoTeclado" min="0.0" max="1.0" step="0.1" value="0.3">
+                <input type="range" name="volumeDoTeclado" id="volumeDoTeclado" min="0.0" max="1.0" step="0.1"
+                    value="0.3">
             </div>
 
             <div>
                 <p class="p-config">Volume do botões</p>
-                <input type="range" name="volumeDosBotoes" id="volumeDosBotoes" min="0.0" max="1.0" step="0.1" value="0.1">
+                <input type="range" name="volumeDosBotoes" id="volumeDosBotoes" min="0.0" max="1.0" step="0.1"
+                    value="0.1">
             </div>
 
             <div>
                 <p class="p-config">Volume das músicas</p>
-                <input type="range" name="volumeDasMusicas" id="volumeDasMusicas" min="0.0" max="1.0" step="0.1" value="0.2">
+                <input type="range" name="volumeDasMusicas" id="volumeDasMusicas" min="0.0" max="1.0" step="0.1"
+                    value="0.2">
             </div>
         </div>
 
         <div class="flexbox janela-menu-footer">
             <button onclick="resetValues()">Resetar Valores</button>
+        </div>
+    </div>
+
+    <div class="janela-menu contador">
+        <div class="flexbox janela-menu-contador-main">
+            <div class="janela-menu-contador-main-header">
+                <h1>VOLTE AMANHÃ!</h1>
+            </div>
+
+            <div class="janela-menu-contador-main-body">
+                <div class="janela-menu-contador-main-body-texto">
+                    <h3>Você jogou suas 3 palavras do dia...</h3>
+                </div>
+
+                <div class="janela-menu-contador-main-body-contador">
+                    <h4 style="margin-bottom: 7px;">Próximas palavras em:</h4>
+                    <h3 style="margin-top: 0;" class="contadorHTML">00:00:00</h3>
+                </div>
+            </div>
+
+            <div class="janela-menu-contador-main-footer">
+                <h3>DESAFIE SEUS AMIGOS!</h3>
+            
+                <button onclick="copiarLinkDoSite()" class="flexbox share-btn"> <i class="fa fa-share-alt" style="font-size:20px; color: #424874; margin-right: 10px"></i><h4>Clique para copiar o link da página</h4></button>
+                <div class="flexbox jaba">
+                    <p class="p-jaba">Feito por Henrique Angelin</p>
+                    <a href="https://github.com/zHenryTM/wordle-ptbr" target="_blank" rel="noopener noreferrer"><i
+                            class="fa-brands fa-github"></i></a>
+                </div>
+
+            </div>
         </div>
     </div>
     <!-- FIM ELEMENTOS DA SEÇÃO MENU -->
@@ -218,7 +253,7 @@
         </div>
 
         <footer class="flexbox">
-            <p>Acesse o código fonte no perfil do desenvolvedor</p>
+            <p>Feito por Henrique Angelin</p>
             <a href="https://github.com/zHenryTM/wordle-ptbr" target="_blank" rel="noopener noreferrer"><i
                     class="fa-brands fa-github"></i></a>
         </footer>
@@ -248,6 +283,9 @@
 
     <!-- Importar script responsável pelos áudios -->
     <script type="module" src="./JavaScript/AudioManagement.js"></script>
+
+    <!-- Importar script responsável por copiar link do site -->
+    <script type="module" src="./JavaScript/functions/copiarLinkDoSite.js" defer></script>
 </body>
 
 </html>
