@@ -31,7 +31,7 @@
         </div>
 
         <div class="janela-menu-body">
-            <p">Descubra as palavras do dia. Use o botão Enter para enviar sua tentativa. Depois de cada tentativa, a
+            <p">Descubra as 3 palavras do dia. Use o botão Enter para enviar sua tentativa. Depois de cada tentativa, a
                 cor dos quadrados irá mudar de acordo com os seguintes exemplos:</p>
 
                 <div>
@@ -104,7 +104,7 @@
         </div>
     </div>
 
-    <div class="janela-menu contador">
+    <div class="janela-menu contador"> <!-- JANELA QUE MOSTRA QUANTO TEMPO FALTA ATÉ O JOGADOR PODER JOGAR O JOGO NOVAMENTE -->
         <div class="flexbox janela-menu-contador-main">
             <div class="janela-menu-contador-main-header">
                 <h1>VOLTE AMANHÃ!</h1>
@@ -123,14 +123,37 @@
 
             <div class="janela-menu-contador-main-footer">
                 <h3>DESAFIE SEUS AMIGOS!</h3>
-            
-                <button onclick="copiarLinkDoSite()" class="flexbox share-btn"> <i class="fa fa-share-alt" style="font-size:20px; color: #424874; margin-right: 10px"></i><h4>Clique para copiar o link da página</h4></button>
+
+                <button onclick="copiarLink()" class="flexbox share-btn"> <i class="icones-estilizados fa fa-share-alt"
+                        style="font-size:20px; color: #424874; margin-right: 10px"></i>
+                    <h4>Clique para copiar o link da página</h4>
+                </button>
                 <div class="flexbox jaba">
                     <p class="p-jaba">Feito por Henrique Angelin</p>
                     <a href="https://github.com/zHenryTM/wordle-ptbr" target="_blank" rel="noopener noreferrer"><i
                             class="fa-brands fa-github"></i></a>
                 </div>
 
+            </div>
+        </div>
+    </div>
+
+    <div class="janela-menu reinicio-rapido"> <!-- JANELA QUE OFERECE AO JOGADOR A OPÇÃO DE REINICIAR O JOGO RAPIDAMENTE -->
+        <div class="flexbox reinicio-rapido-main">
+            <div class="flexbox reinicio-rapido-header">
+                <h2>QUE TAL UM NOVO DESAFIO?</h2>
+            </div>
+
+            <div class="flexbox reinicio-rapido-body">
+                <h3 class="partidasRestantes" style="text-align: center; margin: 0;">TEXTO INFORMATIVO</h3>
+                <button onclick="recarregarPagina()" class="flexbox share-btn" style="margin-top: 10px"><h4>Jogar Novamente <i class="icones-estilizados fa fa-refresh" style="font-size:20px; color: #424874"></i> </h4>
+                </button>
+            </div>
+
+            <div class="flexbox reinicio-rapido-footer">
+                <p class="p-jaba">Feito por Henrique Angelin</p>
+                <a href="https://github.com/zHenryTM/wordle-ptbr" target="_blank" rel="noopener noreferrer"><i
+                        class="fa-brands fa-github"></i></a>
             </div>
         </div>
     </div>
@@ -283,9 +306,6 @@
 
     <!-- Importar script responsável pelos áudios -->
     <script type="module" src="./JavaScript/AudioManagement.js"></script>
-
-    <!-- Importar script responsável por copiar link do site -->
-    <script type="module" src="./JavaScript/functions/copiarLinkDoSite.js" defer></script>
 </body>
 
 </html>
