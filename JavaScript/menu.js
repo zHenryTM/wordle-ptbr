@@ -31,6 +31,7 @@ export class Menu
     static instrucoes = document.getElementsByClassName("instrucoes")[0];
     static configuracoes = document.getElementsByClassName("configuracoes")[0];
     static reinicioRapido = document.getElementsByClassName("reinicio-rapido")[0];
+    static janelaContador = document.getElementsByClassName("contador")[0]
     static instrucoesEstaVisivel = false;
     static configuracoesEstaVisivel = false;
     static reinicioRapidoEstaVisivel = false;
@@ -42,13 +43,17 @@ export class Menu
         {
             this.pelicula.style.visibility = "visible";
             this.instrucoes.style.visibility = "visible";
+            this.instrucoes.style.animation = "0.9s zoomGridEnter ease";
             this.instrucoesEstaVisivel = true;
         }
         else
         {
-            this.pelicula.style.visibility = "hidden";
-            this.instrucoes.style.visibility = "hidden";
             this.instrucoesEstaVisivel = false;
+            this.instrucoes.style.animation = "0.3s zoomMenuOut ease";
+            setTimeout(() => {
+                this.instrucoes.style.visibility = "hidden";
+                this.pelicula.style.visibility = "hidden";
+            }, 300);
         }
     }
 
@@ -59,13 +64,17 @@ export class Menu
         {
             this.pelicula.style.visibility = "visible";
             this.configuracoes.style.visibility = "visible";
+            this.configuracoes.style.animation = "0.9s zoomGridEnter ease";
             this.configuracoesEstaVisivel = true;
         }
         else
         {
-            this.pelicula.style.visibility = "hidden";
-            this.configuracoes.style.visibility = "hidden";
             this.configuracoesEstaVisivel = false;
+            this.configuracoes.style.animation = "0.3s zoomMenuOut ease";
+            setTimeout(() => {
+                this.configuracoes.style.visibility = "hidden";
+                this.pelicula.style.visibility = "hidden";
+            }, 300);
         }
     }
 
@@ -74,9 +83,12 @@ export class Menu
     {
         if (this.reinicioRapidoEstaVisivel)
         {
-            this.pelicula.style.visibility = "hidden";
-            this.reinicioRapido.style.visibility = "hidden";
             this.reinicioRapidoEstaVisivel = false;
+            this.reinicioRapido.style.animation = "0.3s zoomMenuOut ease";
+            setTimeout(() => {
+                this.pelicula.style.visibility = "hidden";
+                this.reinicioRapido.style.visibility = "hidden"; 
+            }, 300)
         }
     }
 
@@ -108,9 +120,9 @@ export class Menu
 
     static exibirJanelaContador()
     {
-        document.getElementsByClassName("contador")[0].style.visibility = "visible";
-
-        Menu.pelicula.style.visibility = "visible";
+        this.janelaContador.style.visibility = "visible";
+        this.pelicula.style.visibility = "visible";
+        this.janelaContador.style.animation = "0.9s zoomGridEnter ease";
 
         contador();
     }
@@ -119,12 +131,11 @@ export class Menu
     static exibirJanelaDeReinicioRapido()
     {
         if ((4 - LocalStorageManagement.getEndGameData().endGame) != 0)
-        {
-            var janelaReinicioRapido = document.getElementsByClassName("reinicio-rapido")[0];
-    
+        {    
             this.reinicioRapidoEstaVisivel = true;
-            janelaReinicioRapido.style.visibility = "visible";
-            Menu.pelicula.style.visibility = "visible";
+            this.reinicioRapido.style.visibility = "visible";
+            this.reinicioRapido.style.animation = "0.9s zoomGridEnter ease";
+            this.pelicula.style.visibility = "visible";
 
             partidasRestantes();
         }
