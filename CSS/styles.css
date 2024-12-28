@@ -68,6 +68,7 @@ button:active
     padding: 0px 15px;
     visibility: hidden;
     z-index: 2;
+    animation: none;
 }
 
 
@@ -418,7 +419,7 @@ footer p
 }
 
 
-@keyframes zoomGridEnter  /* Chamado quando o jogador digita algo na tela */
+@keyframes zoomGridEnter  /* Chamado quando o jogador digita algo na tela ou abre alguma janela do menu*/
 {
     0% {scale: 0%}
     50% {scale: 110%}
@@ -431,6 +432,13 @@ footer p
     0% {scale: 0%}
     50% {scale: 110%}
     100% {scale: 100%}
+}
+
+
+@keyframes zoomMenuOut  /* Chamado quando o jogador fecha alguma janela do menu */
+{
+    0% {scale: 100%}
+    100% {scale: 0%}
 }
 
 
