@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle-PtBR</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Archivo+Black&family=Maven+Pro:wght@400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="flexbox">
+    <!-- ELEMENTOS DA SEÇÃO MENU -->
+    <div class="menu-pelicula" onclick="fecharJanela()"></div>
+
+    <div class="janela-menu instrucoes"> <!-- JANELA DA SEÇÃO INSTRUÇÕES -->
+        <div class="flexbox janela-menu-header">
+            <h2>COMO JOGAR</h2>
+            <h4 class="icone" onmouseover="playButtonHoverAudio()" onclick="fecharJanela()"
+                style="position: absolute; top: 0; right: 5px;">✖</h4>
+        </div>
+
+        <div class="janela-menu-body">
+            <p">Descubra as 3 palavras do dia. Use o botão Enter para enviar sua tentativa. Depois de cada tentativa, a
+                cor dos quadrados irá mudar de acordo com os seguintes exemplos:</p>
+
+                <div>
+                    <ul class="flexbox">
+                        <li class="flexbox">H</li>
+                        <li class="flexbox">E</li>
+                        <li class="flexbox right-position">N</li>
+                        <li class="flexbox">R</li>
+                        <li class="flexbox">Y</li>
+                    </ul>
+                    <p>A letra N está na palavra e na posição certa.</p>
+
+                    <ul class="flexbox">
+                        <li class="flexbox">I</li>
+                        <li class="flexbox wrong-position">N</li>
+                        <li class="flexbox">T</li>
+                        <li class="flexbox">E</li>
+                        <li class="flexbox">L</li>
+                    </ul>
+                    <p>A letra N está na palavra, mas está na posição errada.</p>
+
+                    <ul class="flexbox">
+                        <li class="flexbox">Z</li>
+                        <li class="flexbox">E</li>
+                        <li class="flexbox">L</li>
+                        <li class="flexbox">D</li>
+                        <li class="flexbox">A</li>
+                    </ul>
+                    <p>Nenhuma das letras acima está na palavra.</p>
+                    <h3 style="text-align: center;">Boa sorte!</h3>
+                </div>
+        </div>
+    </div>
+
+    <div class="janela-menu configuracoes"> <!-- JANELA DA SEÇÃO CONFIGURAÇÕES -->
+        <div class="flexbox janela-menu-header">
+            <h2>CONFIGURAÇÕES</h2>
+            <h4 class="icone" onmouseover="playButtonHoverAudio()" onclick="fecharJanela()"
+                style="position: absolute; top: 0; right: 5px;">✖</h4>
+        </div>
+
+        <div class="janela-menu-body">
+            <div class="flexbox mutar-efeitos-sonoros">
+                <p>Mutar efeitos sonoros</p>
+                <input type="checkbox" name="mutarEfeitosSonoros" id="mutarEfeitosSonoros">
+                <button onclick="muteAllSounds()">Confirmar</button>
+            </div>
+
+            <div>
+                <p class="p-config">Volume do teclado</p>
+                <input type="range" name="volumeDoTeclado" id="volumeDoTeclado" min="0.0" max="1.0" step="0.1"
+                    value="0.3">
+            </div>
+
+            <div>
+                <p class="p-config">Volume do botões</p>
+                <input type="range" name="volumeDosBotoes" id="volumeDosBotoes" min="0.0" max="1.0" step="0.1"
+                    value="0.1">
+            </div>
+
+            <div>
+                <p class="p-config">Volume das músicas</p>
+                <input type="range" name="volumeDasMusicas" id="volumeDasMusicas" min="0.0" max="1.0" step="0.1"
+                    value="0.2">
+            </div>
+        </div>
+
+        <div class="flexbox janela-menu-footer">
+            <button onclick="resetValues()">Resetar Valores</button>
+        </div>
+    </div>
+
+    <div class="janela-menu contador"> <!-- JANELA QUE MOSTRA QUANTO TEMPO FALTA ATÉ O JOGADOR PODER JOGAR O JOGO NOVAMENTE -->
+        <div class="flexbox janela-menu-contador-main">
+            <div class="janela-menu-contador-main-header">
+                <h1>VOLTE AMANHÃ!</h1>
+            </div>
+
+            <div class="janela-menu-contador-main-body">
+                <div class="janela-menu-contador-main-body-texto">
+                    <h3>Você jogou suas 3 palavras do dia...</h3>
+                </div>
+
+                <div class="janela-menu-contador-main-body-contador">
+                    <h4 style="margin-bottom: 7px;">Próximas palavras em:</h4>
+                    <h3 style="margin-top: 0;" class="contadorHTML">00:00:00</h3>
+                </div>
+            </div>
+
+            <div class="janela-menu-contador-main-footer">
+                <h3>DESAFIE SEUS AMIGOS!</h3>
+
+                <button onclick="copiarLink()" class="flexbox share-btn"> <i class="icones-estilizados fa fa-share-alt"
+                        style="font-size:20px; color: #424874; margin-right: 10px"></i>
+                    <h4>Clique para copiar o link da página</h4>
+                </button>
+                <div class="flexbox jaba">
+                    <p class="p-jaba">Feito por Henrique Angelin</p>
+                    <a href="https://github.com/zHenryTM/wordle-ptbr" target="_blank" rel="noopener noreferrer"><i
+                            class="fa-brands fa-github"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="janela-menu reinicio-rapido"> <!-- JANELA QUE OFERECE AO JOGADOR A OPÇÃO DE REINICIAR O JOGO RAPIDAMENTE -->
+        <div class="flexbox reinicio-rapido-main">
+            <div class="flexbox reinicio-rapido-header">
+                <h2>QUE TAL UM NOVO DESAFIO?</h2>
+            </div>
+
+            <div class="flexbox reinicio-rapido-body">
+                <h3 class="partidasRestantes" style="text-align: center; margin: 0;">TEXTO INFORMATIVO</h3>
+                <button onclick="recarregarPagina()" class="flexbox share-btn" style="margin-top: 10px"><h4>Jogar Novamente <i class="icones-estilizados fa fa-refresh" style="font-size:20px; color: #424874"></i> </h4>
+                </button>
+            </div>
+
+            <div class="flexbox reinicio-rapido-footer">
+                <p class="p-jaba">Feito por Henrique Angelin</p>
+                <a href="https://github.com/zHenryTM/wordle-ptbr" target="_blank" rel="noopener noreferrer"><i
+                        class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- FIM ELEMENTOS DA SEÇÃO MENU -->
+
+
+
+
+    <!-- ELEMENTOS PRINCIPAIS DO JOGO - CABEÇALHO, GRIDS E TECLADO VIRTUAL -->
+    <div class="flexbox principal">
+        <div class="flexbox header">
+            <div class="btn-instrucoes" onclick="switchJanelaInstrucoes()" onmouseover="playButtonHoverAudio()">
+                <h2 class="icone">?</h2>
+            </div>
+
+            <div class="logo">
+                <h2 class="icone" style="margin-left: 14px;">WORDLE</h2>
+            </div>
+
+            <div class="btn-config" onclick="switchJanelaConfiguracoes()" onmouseover="playButtonHoverAudio()">
+                <h2 class="icone">⚙️</h2>
+            </div>
+        </div>
+
+        <!-- ELEMENTOS DO FEEDBACK (MENSAGEM QUE INFORMA SE O JOGADOR VENCEU, SE A PALAVRA DIGITADA É INVÁLIDA E QUAL ERA A PALAVRA CORRETA AO DAR GAME OVER -->
+        <div class="feedback">
+            <p></p>
+        </div>
+        <!-- FIM ELEMENTOS DO FEEDBACK (MENSAGEM QUE INFORMA SE O JOGADOR VENCEU, SE A PALAVRA DIGITADA É INVÁLIDA E QUAL ERA A PALAVRA CORRETA AO DAR GAME OVER -->
+
+
+        <div class="jogo">
+            <ul class="flexbox">
+                <li class="flexbox grid-item enabled"></li>
+                <li class="flexbox grid-item enabled"></li>
+                <li class="flexbox grid-item enabled"></li>
+                <li class="flexbox grid-item enabled"></li>
+                <li class="flexbox grid-item enabled"></li>
+            </ul>
+
+            <ul class="flexbox">
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+            </ul>
+
+            <ul class="flexbox">
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+            </ul>
+
+            <ul class="flexbox">
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+            </ul>
+
+            <ul class="flexbox">
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+            </ul>
+
+            <ul class="flexbox">
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+                <li class="flexbox grid-item disabled"></li>
+            </ul>
+        </div>
+
+        <div class="teclado">
+
+            <ul class="flexbox teclado-virtual">
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('Q')">Q</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('W')">W</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('E')">E</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('R')">R</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('T')">T</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('Y')">Y</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('U')">U</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('I')">I</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('O')">O</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('P')">P</li>
+            </ul>
+
+            <ul class="flexbox teclado-virtual">
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('A')">A</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('S')">S</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('D')">D</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('F')">F</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('G')">G</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('H')">H</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('J')">J</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('K')">K</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('L')">L</li>
+                <li class="flexbox tecla tecla-backspace" onclick="inputTecladoVirtual('Backspace')">⌫</li>
+            </ul>
+
+            <ul class="flexbox teclado-virtual">
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('Z')">Z</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('X')">X</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('C')">C</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('V')">V</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('B')">B</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('N')">N</li>
+                <li class="flexbox tecla" onclick="inputTecladoVirtual('M')">M</li>
+                <li class="flexbox tecla tecla-enter" onclick="inputTecladoVirtual('Enter')">ENTER</li>
+            </ul>
+        </div>
+
+        <footer class="flexbox">
+            <p>Feito por Henrique Angelin</p>
+            <a href="https://github.com/zHenryTM/wordle-ptbr" target="_blank" rel="noopener noreferrer"><i
+                    class="fa-brands fa-github"></i></a>
+        </footer>
+    </div>
+    <!-- FIM ELEMENTOS PRINCIPAIS DO JOGO - CABEÇALHO, GRIDS E TECLADO VIRTUAL -->
+
+
+
+
+    <!-- Detectar input dos cliques no teclado virtual -->
+    <script type="module" src="./JavaScript/functions/inputTecladoVirtual.js"></script>
+
+    <!-- Detectar input do teclado físico -->
+    <script type="module" src="./JavaScript/functions/inputTecladoFisico.js"></script>
+
+    <!-- Gerar palavra a ser adivinhada -->
+    <script type="module" src="./JavaScript/functions/obterPalavraAleatoria.js"></script>
+
+    <!-- Import biblioteca de animação de confetes -->
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+
+    <!-- Criar método que lança os confetes quando é chamado -->
+    <script type="module" src="./JavaScript/functions/confetti.js"></script>
+
+    <!-- Importar script responsável pelo menu -->
+    <script type="module" src="./JavaScript/menu.js"></script>
+
+    <!-- Importar script responsável pelos áudios -->
+    <script type="module" src="./JavaScript/AudioManagement.js"></script>
+</body>
+
+</html>
